@@ -26,6 +26,7 @@
       <sprites name="Attack">
         <sprite>sprites\sPlayerJab</sprite>
         <sprite>sprites\sPlayerRollSlash</sprite>
+        <sprite>sprites\sPlayerKunai</sprite>
       </sprites>
       <sprites name="Shield">
         <sprite>sprites\sPlayerSlideShield</sprite>
@@ -84,6 +85,7 @@
     <sprite>sprites\sCratePoof</sprite>
     <sprite>sprites\sprite53</sprite>
     <sprite>sprites\sprite54</sprite>
+    <sprite>sprites\sprite55</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -149,6 +151,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTest</room>
+    <room>rooms\room1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

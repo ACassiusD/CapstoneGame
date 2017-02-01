@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>jumped = false;
+            <string>//Intitilization variables
+
+jumped = false;
 landed = false;
 
 platformTarget = 0;
@@ -66,7 +68,9 @@ cRight   = place_meeting(x + 1, y, oBlock);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Handle sub-pixel movement
+            <string>//Runs after all objects step events have ended.
+
+// Handle sub-pixel movement
 cx += vx;
 cy += vy;
 vxNew = round(cx);
@@ -103,8 +107,11 @@ if (bbox_right &lt; 0 || bbox_left &gt; room_width || bbox_top &gt; room_height 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>onGround = OnGround();
+            <string>//Runs before any object instances step events have begun.
 
+onGround = OnGround();
+
+//Checks for a collision with the specified object and returns its id.
 cLeft  = place_meeting(x - 1, y, oBlock); 
 cRight = place_meeting(x + 1, y, oBlock);
 

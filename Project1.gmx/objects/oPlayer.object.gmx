@@ -337,12 +337,17 @@ if (onGround) {
 }
 
 // Reset wall cling
+//If not touching a block to the left the right or on the ground
 if ((!cRight &amp;&amp; !cLeft) || onGround) {
     canStick = true;
     sticking = false;
 }   
 
 // Cling to wall
+//Player will cling to wall a certan amount of time after they hold away from the wall if they are not touching the ground
+//When against a wall and holding key away from the wall
+//Check if player can stick to the wall and is not on ground
+//If they can stick to the wall set the wall sticking timer.
 if (((kRight &amp;&amp; cLeft) || (kLeft &amp;&amp; cRight)) &amp;&amp; canStick &amp;&amp; !onGround) {
     alarm[0] = clingTime;
     sticking = true; 
@@ -351,7 +356,7 @@ if (((kRight &amp;&amp; cLeft) || (kLeft &amp;&amp; cRight)) &amp;&amp; canStick
 
 // Handle gravity
 if (!onGround) {
-    if ((cLeft || cRight) &amp;&amp; vy &gt;= 0) {
+    if ((cLeft || cRight) &amp;&amp; vy &gt;= 0) { //If touching a wall and not sliding up
         // Wall slide
         vy = Approach(vy, vyMax, gravSlide);
     } else {
@@ -367,6 +372,8 @@ if (kLeft &amp;&amp; !kRight &amp;&amp; !sticking) {
     state  = RUN;
     
     // Apply acceleration left
+    // If x velocity is moving in opposite direction 
+    // approach 0 xvelocity and approach max x velocity for moving left
     if (vx &gt; 0)
         vx = Approach(vx, 0, tempFric);   
     vx = Approach(vx, -vxMax, tempAccel);
@@ -383,9 +390,12 @@ if (kLeft &amp;&amp; !kRight &amp;&amp; !sticking) {
 }
 
 // Friction
+// If right or left keys are not pressed
 if (!kRight &amp;&amp; !kLeft) {
-    vx = Approach(vx, 0, tempFric);
     
+    vx = Approach(vx, 0, tempFric); //Approach 0 x velocity
+    
+    //If we are not rolling we are idle
     if (state != ROLL)
         state = IDLE;
 } 
@@ -554,6 +564,7 @@ yscale = Approach(yscale, 1, 0.05);
             <kind>1</kind>
             <string>/// Hitbox
 
+//Distory all hitboxes
 with (oPlayerAtkBox)
     instance_destroy();
 
