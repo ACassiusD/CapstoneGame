@@ -127,6 +127,9 @@
       <object>objects\oPlayer</object>
       <object>objects\oPlayerAtkBox</object>
       <object>objects\oParticlePlayer</object>
+      <objects name="Abilities">
+        <object>objects\oAbilityKunai</object>
+      </objects>
     </objects>
     <objects name="Effect">
       <object>objects\oFxFadeIn</object>
