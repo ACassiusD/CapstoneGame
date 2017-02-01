@@ -1,0 +1,39 @@
+Tabbed Inventory
+by StormingLeech Productions
+
+Setup:
+Import All into your game.
+You can discard the Demo folders if you like. Those are only for showing a working demo.
+You can replace the tab sprites with anything you like. You can duplicate tab objects
+to make more tabs, delete tab objects, and rename tab objects.
+
+How to make it work:
+1) The inventory uses up a room. If you are making a shop, you should make one room for 
+each different shop (but not one room per tab). The width of the room should be set like this:
+(number of tabs) x (width of room)
+
+2) Add a background graphic to your room. Turn on horizontal tiling so that you can see
+the area where each tab will occur.
+
+3) Enable the use of views. Set view[0] so that the view width and port width are the
+desired width of the game window, and so that the view height and port height are the
+desired height of the game window. Set the view to be enabled at the start.
+
+4) Set the x and y position for view[1] to be in the upper left corner of the place where
+the content for the first inventory tab should appear. Set the view and port width and height
+to the amount needed to match the content area.
+
+	In the example, notice how the background graphic has an empty area in the lower right
+	This area is where content for each tab will go, and view[1] is set up to surround 
+	this area.
+
+5) Position tab objects in the room. These should be within view[0], but not within view[1]
+(See the Demo room for an example). There can be many tabs. It is important that each tab
+calls event_inherited() in its create event, and that each tab has a tabNum that represents
+the order of its placement in the room. You can place tabs in whatever manner you wish, but
+remember that the number of each tab determines how far to move view[1].
+
+6) Position items in the room. There are many ways that this might work, so that is not part
+of the scope of this asset. If this is an inventory, items might be placed by a controller 
+object. If it's a shop, you might just place items onto each area of the room corresponding
+to a particular tab.
