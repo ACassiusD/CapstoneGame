@@ -50,8 +50,16 @@ vel = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = x+vx;
+            <string>if place_meeting(x, y, oBlock)
+{
+    vx = 0;
+    vy = 0;
+}
+
+x = x+vx;
 y = y+vy;
+
+
 </string>
           </argument>
         </arguments>
