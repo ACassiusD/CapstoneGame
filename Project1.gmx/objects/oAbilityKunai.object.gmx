@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>vx = 0;
 vy = 0;
-throwSpeed = 2;
+throwSpeed = 10;
 maxSpeed = 5;
 </string>
           </argument>
