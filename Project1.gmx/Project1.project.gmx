@@ -151,6 +151,10 @@
     <object>objects\oCrateSmall</object>
     <object>objects\oCoin</object>
     <object>objects\oCratePoof</object>
+    <objects name="debug">
+      <object>objects\oDebugger</object>
+      <object>objects\otestobject</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTest</room>

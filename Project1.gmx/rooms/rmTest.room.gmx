@@ -219,6 +219,7 @@
     <instance objName="oFGGrass2" x="564" y="192" name="inst_911D9009" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="368" y="208" name="inst_C2D52486" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="552" y="176" name="inst_6C30B7E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDebugger" x="0" y="24" name="inst_ACFB02C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles0" x="440" y="296" w="8" h="8" xo="16" yo="56" id="10000274" name="inst_FD817065" depth="6" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

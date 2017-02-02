@@ -633,17 +633,34 @@ if(kLClick){
     var h_point = gamepad_axis_value(0, gp_axisrh);
     var v_point = gamepad_axis_value(0, gp_axisrv);
    
-    pdir = point_direction(0 , 0, h_point, v_point);
-    var dif = angle_difference(pdir, image_angle);
-    kunai.image_angle = dif;
+     if (h_point != 0.0 || v_point != 0.0) {
+         
+    //pdir = point_direction(0 , 0, h_point, v_point);
+    //var dif = angle_difference(pdir, image_angle);
+    //kunai.image_angle = dif;         
+         var dif = angle_difference(angle, image_angle);
+         kunai.image_angle = dif;
+         show_debug_message(angle);
+        
+         kunai.vx = kunai.throwSpeed * h_point;
+         kunai.vy = kunai.throwSpeed * h_point;          
+         
+     }    
+    
+    //pdir = point_direction(0 , 0, h_point, v_point);
+    //var dif = angle_difference(pdir, image_angle);
+    //kunai.image_angle = dif;
+    
+    
+    
     //angle = degtorad(dir);
     //kunai.image_angle = point_direction(x, y, mouse_x, mouse_y);
     
     //kunai.vx = kunai.vel * cos(angle);
     //kunai.vy = kunai.vel * -sin(angle);
    
-    kunai.vx += kunai.throwSpeed * h_point;
-    kunai.vy += kunai.throwSpeed * v_point;  
+    //kunai.vx += kunai.throwSpeed * h_point;
+    //kunai.vy += kunai.throwSpeed * v_point;  
 }
 </string>
           </argument>
