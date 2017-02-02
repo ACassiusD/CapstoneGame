@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>vx = 0;
 vy = 0;
-vel = 10;
+throwSpeed = 2;
+maxSpeed = 5;
 </string>
           </argument>
         </arguments>
@@ -50,14 +51,26 @@ vel = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x, y, oBlock)
+            <string>//If the object will hit a wall on the next frame
+
+if place_meeting(x + vx, y + vy, oBlock) 
 {
+    //Increase x and y positoion by 1 until it has reached the object
+    while (!place_meeting(x + sign(vx), y + sign(vy), oBlock)){ 
+        x += sign(vx)
+        y += sign(vy)
+    } 
+    //Once it has reached the object stop velocity
     vx = 0;
-    vy = 0;
+    vy = 0;  
 }
 
-x = x+vx;
-y = y+vy;
+x += vx;
+y += vy;
+
+
+
+
 
 
 </string>

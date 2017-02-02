@@ -34,17 +34,17 @@ facing = 1;
 
 // Movement ///////////////////////////////////////////////////////////////////
 
-groundAccel = 1.00;
+groundAccel = 0.50;
 groundFric  = 2.00;
 airAccel    = 0.75;
 airFric     = 0.01;
-vxMax       = 5.50;
-vyMax       = 10.0;
+vxMax       = 4.00;
+vyMax       = 6.00;
 jumpHeight  = 6.00;
 gravNorm    = 0.50;
 gravSlide   = 0.25; 
 
-clingTime   = 2.0;
+clingTime   = 6.0;
 
 // Misc ///////////////////////////////////////////////////////////////////////
 
@@ -69,7 +69,6 @@ blocking  = false;
 
 //fallTime = 0;
 //fallMax  = 28;
-
 </string>
           </argument>
         </arguments>
@@ -287,20 +286,20 @@ if (onGround &amp;&amp; !onGroundPrev) {
 
 var kLeft, kRight, kUp, kDown, kJump, kJumpRelease, kAction, kBlock, kRollL, kRollR, tempAccel, tempFric, kLClick;
 
-kLeft        = keyboard_check(vk_left)  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
-kRight       = keyboard_check(vk_right) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
-kUp          = keyboard_check(vk_up)    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
-kDown        = keyboard_check(vk_down)  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
+kLeft        = keyboard_check(ord('A'))  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
+kRight       = keyboard_check(ord('D')) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
+kUp          = keyboard_check(ord('W'))    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
+kDown        = keyboard_check(ord('S'))  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
 
-kJump        = keyboard_check_pressed(ord('Z'))  || gamepad_button_check_pressed(0, gp_face1);
-kJumpRelease = keyboard_check_released(ord('Z')) || gamepad_button_check_released(0, gp_face1);
+kJump        = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed(0, gp_face1);
+kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
 
 kAction      = keyboard_check_pressed(ord('X'))  || gamepad_button_check_pressed(0, gp_face3);
 kBlock       = keyboard_check(ord('C'))          || gamepad_button_check(0, gp_face2);
-kRollL       = keyboard_check_pressed(ord('A'))  || gamepad_button_check_pressed(0, gp_shoulderlb);
-kRollR       = keyboard_check_pressed(ord('D'))  || gamepad_button_check_pressed(0, gp_shoulderrb);
+kRollL       = keyboard_check_pressed(ord('4'));
+kRollR       = keyboard_check_pressed(ord('6'))  || gamepad_button_check_pressed(0, gp_shoulderrb);
 
-kLClick      = mouse_check_button_pressed(mb_left); //Checking if left mouse button was clicked.
+kLClick      = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderlb); //Checking if left mouse button was clicked.
 
 
 
@@ -370,27 +369,31 @@ if (!onGround) {
 }
 
 if (state != ROLL) {
-// Left 
-if (kLeft &amp;&amp; !kRight &amp;&amp; !sticking) {
-    facing = -1;
-    state  = RUN;
+    // Left 
+    if (kLeft &amp;&amp; !kRight &amp;&amp; !sticking) 
+    {
+        facing = -1;
+        state  = RUN;
+        
+        // Apply acceleration left
+        // If x velocity is moving in opposite direction 
+        // approach 0 xvelocity and approach max x velocity for moving left
+        if (vx &gt; 0)
+            vx = Approach(vx, 0, tempFric);   
+            vx = Approach(vx, -vxMax, tempAccel);
+    }
     
-    // Apply acceleration left
-    // If x velocity is moving in opposite direction 
-    // approach 0 xvelocity and approach max x velocity for moving left
-    if (vx &gt; 0)
-        vx = Approach(vx, 0, tempFric);   
-    vx = Approach(vx, -vxMax, tempAccel);
-// Right
-} else if (kRight &amp;&amp; !kLeft &amp;&amp; !sticking) {
-    facing = 1;
-    state  = RUN;
-    
-    // Apply acceleration right
-    if (vx &lt; 0)
-        vx = Approach(vx, 0, tempFric);   
-    vx = Approach(vx, vxMax, tempAccel);
-}
+    // Right
+    else if (kRight &amp;&amp; !kLeft &amp;&amp; !sticking)   
+    {
+        facing = 1;
+        state  = RUN;
+        
+        // Apply acceleration right
+        if (vx &lt; 0)
+            vx = Approach(vx, 0, tempFric);   
+            vx = Approach(vx, vxMax, tempAccel);
+    }
 }
 
 // Friction
@@ -489,7 +492,7 @@ if (onGround &amp;&amp; !attacking) {
 
 // Roll speed
 if (state == ROLL) {
-    vx = facing * 6;
+    vx = facing * 4.5;
     
     // Break out of roll
     if (!onGround || (cLeft || cRight)) {
@@ -621,19 +624,26 @@ if(kLClick){
     with(oAbilityKunai)                 
         instance_destroy();
         
-       
-        
     //Create new kunai
+    
     kunai = instance_create(x, y, oAbilityKunai); 
-    dir = point_direction(x , y, mouse_x, mouse_y);
-    angle = degtorad(dir);
+    //Keyboard controls
     
-    kunai.image_angle = point_direction(x, y, mouse_x, mouse_y);
+    //Get the points of the game pad
+    var h_point = gamepad_axis_value(0, gp_axisrh);
+    var v_point = gamepad_axis_value(0, gp_axisrv);
+   
+    pdir = point_direction(0 , 0, h_point, v_point);
+    var dif = angle_difference(pdir, image_angle);
+    kunai.image_angle = dif;
+    //angle = degtorad(dir);
+    //kunai.image_angle = point_direction(x, y, mouse_x, mouse_y);
     
-    kunai.vx = kunai.vel * cos(angle);
-    kunai.vy = kunai.vel * -sin(angle);
-    
-
+    //kunai.vx = kunai.vel * cos(angle);
+    //kunai.vy = kunai.vel * -sin(angle);
+   
+    kunai.vx += kunai.throwSpeed * h_point;
+    kunai.vy += kunai.throwSpeed * v_point;  
 }
 </string>
           </argument>
