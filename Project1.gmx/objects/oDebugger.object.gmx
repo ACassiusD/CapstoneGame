@@ -79,9 +79,9 @@ yaxis = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(100, 200, 
-    " X    : " + string(gamepad_axis_value(0, gp_axisrh)) +
-    "#Y    : " + string(gamepad_axis_value(0, gp_axisrv)) + 
+            <string>draw_text(100, 150, 
+    "X     : " + string(gamepad_axis_value(0, gp_axisrh)) +
+    "#Y     : " + string(gamepad_axis_value(0, gp_axisrv)) + 
     "#Rad  : " + string(rad) +
     "#Angle: " + string(angle)
      

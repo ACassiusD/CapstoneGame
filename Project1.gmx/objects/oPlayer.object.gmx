@@ -69,6 +69,8 @@ blocking  = false;
 
 //fallTime = 0;
 //fallMax  = 28;
+
+kunai = 0;
 </string>
           </argument>
         </arguments>
@@ -296,10 +298,14 @@ kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_release
 
 kAction      = keyboard_check_pressed(ord('X'))  || gamepad_button_check_pressed(0, gp_face3);
 kBlock       = keyboard_check(ord('C'))          || gamepad_button_check(0, gp_face2);
-kRollL       = keyboard_check_pressed(ord('4'));
-kRollR       = keyboard_check_pressed(ord('6'))  || gamepad_button_check_pressed(0, gp_shoulderrb);
 
-kLClick      = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderlb); //Checking if left mouse button was clicked.
+//These 2 should be facotred out eventually
+kRollL       = keyboard_check_pressed(ord('4'));
+kRollR       = keyboard_check_pressed(ord('6'));
+
+//Ability part 1 and part 2
+kLClick      = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderlb); //Checking if left mouse button or right trigger was clicked.
+kRClick      = mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0, gp_shoulderrb);
 
 
 
@@ -619,15 +625,19 @@ if (sprite_index == sPlayerJab &amp;&amp; round(image_index) &gt; 0) {
             <string>///Abilities
 //Throwing Kunai
 if(kLClick){
-    
+ 
     //Destory any existing Kunai
-    with(oAbilityKunai)                 
-        instance_destroy();
+    if(instance_exists(oAbilityKunai))
+        {
+            with(oAbilityKunai)
+            {                     
+                instance_destroy();
+            }
+        }   
         
     //Create new kunai
-    
     kunai = instance_create(x, y, oAbilityKunai); 
-    //Keyboard controls
+    show_debug_message(kunai);
     
     //Get the points of the game pad
     var h_point = gamepad_axis_value(0, gp_axisrh);
@@ -639,22 +649,13 @@ if(kLClick){
         var dif = angle_difference(pdir, image_angle);
         kunai.image_angle = dif;  
  
-        
-        
-        
         kunai.direction = kunai.image_angle;
         kunai.image_angle = kunai.direction;    
         kunai.speed = kunai.throwSpeed;   
             
-        
-        
-        
         //kunai.hspeed=+kunai.throwSpeed*h_point;
         //kunai.vspeed=+kunai.throwSpeed*v_point;       
-
-                
      }    
-
     //angle = degtorad(dir);
     //kunai.image_angle = point_direction(x, y, mouse_x, mouse_y);
     
@@ -664,6 +665,42 @@ if(kLClick){
     //kunai.vx += kunai.throwSpeed * h_point;
     //kunai.vy += kunai.throwSpeed * v_point;  
 }
+
+
+//Kunai Teleport
+if(kRClick &amp;&amp; !kLClick &amp;&amp; instance_exists(oAbilityKunai)){ 
+    
+    //Make sure the kunai is not currently moving
+    if(kunai.speed &lt;=0) 
+    {
+        newx = kunai.x;
+        newy = kunai.y;
+
+        //If the player will end up stuck in a solid wall when teleported 
+        if(place_meeting(newx, newy, oParSolid)) 
+        {
+            //Adjust the teleport position until this is not true
+            while(place_meeting(newx, newy, oParSolid))
+            {
+                newx += sign(x - newx);
+                newy += sign(y - newy);                
+            }
+        }
+        
+        //Teleport the player
+        x = newx;
+        y = newy;
+        
+        //Delete the kunai object after the teleport
+        if(instance_exists(oAbilityKunai))
+        {
+            with(oAbilityKunai)                 
+                instance_destroy();
+            kunai = null;  
+        }   
+    }
+}
+
 </string>
           </argument>
         </arguments>
