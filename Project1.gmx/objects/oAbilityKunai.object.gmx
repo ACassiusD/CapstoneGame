@@ -25,10 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vx = 0;
-vy = 0;
-throwSpeed = 10;
-maxSpeed = 5;
+            <string>throwSpeed = 5;
+chances = 0;
 </string>
           </argument>
         </arguments>
@@ -51,21 +49,30 @@ maxSpeed = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if place_meeting(x + speed, y + speed, oBlock) //if objcet will collide next frame
+            <string>//Check if the object will collide with a solid object next frame
+if(place_meeting(x+lengthdir_x(speed,direction),y+lengthdir_y(speed,direction), oParSolid))
 {
-    while !place_meeting(x + speed, y + speed, oBlock) 
+    //Move X and Y by 1 pixel until it is about to hit the solid object 
+    while(!place_meeting(x+sign(lengthdir_x(speed,direction)),y+sign(lengthdir_y(speed,direction)), oParSolid))
     {
-        x+=1;
-        y+=1;
+        x+=sign(lengthdir_x(speed,direction));
+        y+=sign(lengthdir_y(speed,direction));
+        
+        //This if statement prevents a glitch.
+        //For some reason when the object hits a corner it will never detect the wall and infinitly count up.
+        //This code gives the object a certan amount of chances to get closer to the wall before giving up and 
+        //resetting back to its initial position.
+        chances+=1;
+        if(chances &gt; throwSpeed)
+        {
+            x -= sign(lengthdir_x(speed,direction)) * chances;
+            y -= sign(lengthdir_y(speed,direction)) * chances;
+            break;
+        }
     }
+    
     speed = 0;
 }
-
-
-
-
-
 
 
 
