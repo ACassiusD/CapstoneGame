@@ -673,24 +673,38 @@ if(kRClick &amp;&amp; !kLClick &amp;&amp; instance_exists(oAbilityKunai)){
     //Make sure the kunai is not currently moving
     if(kunai.speed &lt;=0) 
     {
-        newx = kunai.x;
-        newy = kunai.y;
-
+        //I cant find any easier way to initialize all these variables.
+        //2 sets of varaibles are being instantiated because we will check 2 different ways
+        //  of getting unstuck from the wall and choose the best option
+        dir1X = kunai.x; dir2X = kunai.x;
+        dir1Y = kunai.y; dir2Y = kunai.y;
+        dir1C = 0; dir2C = 0; //Counters
+        
         //If the player will end up stuck in a solid wall when teleported 
-        if(place_meeting(newx, newy, oParSolid)) 
+        if(place_meeting(kunai.x, kunai.y, oParSolid)) 
         {
             //Adjust the teleport position until this is not true
-            while(place_meeting(newx, newy, oParSolid))
+            while(place_meeting(dir1X, dir1Y, oParSolid))
             {
-                newx += sign(x - newx);
-                newy += sign(y - newy);                
+                dir1X += sign(x - dir1X);
+                dir1Y += sign(y - dir1Y); 
+                dir1C += 1;
             }
+            
+            while(place_meeting(dir2X, dir2Y, oParSolid))
+            {
+                dir2X -= sign(x - dir2X);
+                dir2Y -= sign(y - dir2Y); 
+                dir2C += 1;
+            }            
         }
         
-        //Teleport the player
-        x = newx;
-        y = newy;
-        
+        //Choose the best option (the one with the least amount of adjustments to become unstuck)
+        if (dir1C &lt;= dir2C)
+        {x = dir1X; y = dir1Y;}
+        else
+        {x = dir2X; y = dir2Y;}
+            
         //Delete the kunai object after the teleport
         if(instance_exists(oAbilityKunai))
         {
