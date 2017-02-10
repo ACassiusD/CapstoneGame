@@ -26,14 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize the enemy
-enum e_state
+enum e_range_state
 {
     idle,
-    chase
+    attack
 }
-state = e_state.idle;
-vspd = 0;
-hspd = 0;
+state = e_range_state.idle;
 </string>
           </argument>
         </arguments>
@@ -58,56 +56,30 @@ hspd = 0;
             <kind>1</kind>
             <string>switch (state)
 {
-    case e_state.idle:
+    case e_range_state.idle:
     {
-        hspd = 0;
-        vspd = 0;
-        if (distance_to_object(oPlayer) &lt; 100)
+        if (distance_to_object(oPlayer) &lt; 150)
         {
-            state = e_state.chase;
+            state = e_range_state.attack;
         }
     }
     break;
-    case e_state.chase:
+    case e_range_state.attack:
     {
-        dir = sign(oPlayer.x - x);
-        vec = sign(oPlayer.y - y);
-        hspd = dir * 2;
-        vspd = vec * 2;
-        if (distance_to_object(oPlayer) &gt; 150)
+
+        
+            var dir = point_direction(oPlayer.x, oPlayer.y, x, y);
+            var x1 = x;
+            var y1 = y - sprite_height - 10;
+            instance_create(x1, y1, oRangeAttack);
+
+        if (distance_to_object(oPlayer) &gt; 200)
         {
-            state = e_state.idle;
+            state = e_range_state.idle;
         }
     }
     break;
 }
-
-//Horizontal Collisions
-if (place_meeting(x+hspd, y, oParSolid))
-{
-    while (!place_meeting(x+sign(hspd), y, oParSolid))
-    {
-        x += sign(hspd);
-    }
-    hspd = 0;
-}
-
-//Move Horizontally
-x += hspd;
-
-
-//Vertical Collisions
-if (place_meeting(x, y+vspd, oParSolid))
-{
-    while (!place_meeting(x, y+sign(vspd), oParSolid))
-    {
-        y += sign(vspd);
-    }
-    vspd = 0;
-}
-
-//Move Vertically
-y += vspd;
 </string>
           </argument>
         </arguments>

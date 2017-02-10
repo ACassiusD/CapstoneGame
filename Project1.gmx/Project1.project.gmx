@@ -87,6 +87,7 @@
     <sprite>sprites\sprite54</sprite>
     <sprite>sprites\sprite55</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_range_attack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -108,6 +109,11 @@
     <script>scripts\GrassCut.gml</script>
   </scripts>
   <objects name="objects">
+    <objects name="Enemies">
+      <object>objects\obj_enemy</object>
+      <object>objects\oFlyingEnemy</object>
+      <object>objects\oRangeEnemy</object>
+    </objects>
     <object>objects\oGame</object>
     <object>objects\oTouchCompatible</object>
     <objects name="Parent">
@@ -156,8 +162,7 @@
       <object>objects\oDebugger</object>
       <object>objects\otestobject</object>
     </objects>
-    <object>objects\obj_enemy</object>
-    <object>objects\oFlyingEnemy</object>
+    <object>objects\oRangeAttack</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTest</room>
