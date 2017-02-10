@@ -86,6 +86,7 @@
     <sprite>sprites\sprite53</sprite>
     <sprite>sprites\sprite54</sprite>
     <sprite>sprites\sprite55</sprite>
+    <sprite>sprites\spr_enemy</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -155,6 +156,8 @@
       <object>objects\oDebugger</object>
       <object>objects\otestobject</object>
     </objects>
+    <object>objects\obj_enemy</object>
+    <object>objects\oFlyingEnemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTest</room>
