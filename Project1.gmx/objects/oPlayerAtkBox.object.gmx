@@ -72,6 +72,27 @@ with (oParCrate) {
         instance_destroy();
     }
 }
+
+with (obj_enemy) {
+    // Killing Enemy
+    if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
+        instance_destroy();
+    }
+}
+
+with (oFlyingEnemy) {
+    // Killing Enemy
+    if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
+        instance_destroy();
+    }
+}
+
+with (oRangeEnemy) {
+    // Killing Enemy
+    if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -94,9 +115,9 @@ with (oParCrate) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_set_color(c_red);
-//draw_rectangle(bboxleft, bboxtop, bboxright, bboxbottom, true);
-//draw_set_color(c_white);
+            <string>draw_set_color(c_red);
+draw_rectangle(bboxleft, bboxtop, bboxright, bboxbottom, true);
+draw_set_color(c_white);
 </string>
           </argument>
         </arguments>

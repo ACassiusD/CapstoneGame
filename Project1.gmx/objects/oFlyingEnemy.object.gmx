@@ -72,8 +72,8 @@ hspd = 0;
     {
         dir = sign(oPlayer.x - x);
         vec = sign(oPlayer.y - y);
-        hspd = dir * 2;
-        vspd = vec * 2;
+        hspd = dir * 1;
+        vspd = vec * 1;
         if (distance_to_object(oPlayer) &gt; 150)
         {
             state = e_state.idle;
