@@ -102,6 +102,12 @@ state = e_range_state.idle;
     }
     break;
 }
+
+if (place_meeting(x,y,oPlayer))
+{
+    room_restart();
+}
+
 </string>
           </argument>
         </arguments>
