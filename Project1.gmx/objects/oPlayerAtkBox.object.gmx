@@ -96,13 +96,9 @@ with (oRangeEnemy) {
 
 with (oBoss) {
     // Killing Enemy
-    health = 100;
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
-        health -= 50;
-        if (health == 0)
-        {
-            instance_destroy();
-        }
+        hp = hp - 0.5;
+
     }
 }
 </string>

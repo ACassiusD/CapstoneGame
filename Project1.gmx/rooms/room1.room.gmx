@@ -56,7 +56,7 @@
     <instance objName="oBlock" x="992" y="-160" name="inst_EC51C6BA" locked="0" code="" scaleX="2" scaleY="68" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="0" y="-192" name="inst_D56B9724" locked="0" code="" scaleX="2" scaleY="68" colour="4294967295" rotation="0"/>
     <instance objName="oPlayer" x="480" y="640" name="inst_1FDD2D83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBoss" x="352" y="704" name="inst_E8475080" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBoss" x="192" y="672" name="inst_56040F73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

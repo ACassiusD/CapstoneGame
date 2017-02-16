@@ -35,7 +35,7 @@ state = e_boss_state.idle;
 vspd = 0;
 hspd = 0;
 
-health = 100;
+hp = 100;
 </string>
           </argument>
         </arguments>
@@ -66,7 +66,7 @@ health = 100;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>20</string>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
@@ -88,7 +88,71 @@ health = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>//boss health
+if (hp == 0)
+{
+    instance_destroy();
+    instance_create(x,y,oCratePoof);
+    instance_create(x+32,y+32,oCratePoof);
+    instance_create(x-32,y-32,oCratePoof);
+    instance_create(x+32,y-32,oCratePoof);
+    instance_create(x-32,y+32,oCratePoof);
+}
+
+switch (state)
+{
+    case e_boss_state.idle:
+    {
+        if (distance_to_object(oPlayer) &lt; 10000)
+        {
+            state = e_boss_state.attack;
+        }
+    }
+    break;
+    case e_boss_state.attack:
+    {
+
+        if (distance_to_object(oPlayer)&lt; 10000)
+        {
+            if (alarm[0] = -1) alarm = 120;
+        }
+
+        if (distance_to_object(oPlayer) &gt; 12500)
+        {
+            state = e_boss_state.idle;
+        }
+    }
+    break;
+}
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+draw_healthbar(x-32,y-45,x+32,y-55,hp,c_black,c_red,c_green,0,true,false);
+</string>
           </argument>
         </arguments>
       </action>

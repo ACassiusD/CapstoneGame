@@ -97,7 +97,7 @@
     <background>background\tiles0</background>
   </backgrounds>
   <paths name="paths">
-    <path>paths\path0</path>
+    <path>paths\path1</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\Approach.gml</script>
@@ -170,8 +170,8 @@
     <object>objects\oRangeAttack</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rmTest</room>
     <room>rooms\room1</room>
+    <room>rooms\rmTest</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
