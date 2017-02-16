@@ -88,6 +88,7 @@
     <sprite>sprites\sprite55</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_range_attack</sprite>
+    <sprite>sprites\spr_boss</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -109,6 +110,9 @@
     <script>scripts\GrassCut.gml</script>
   </scripts>
   <objects name="objects">
+    <objects name="Bosses">
+      <object>objects\oBoss</object>
+    </objects>
     <objects name="Enemies">
       <object>objects\obj_enemy</object>
       <object>objects\oFlyingEnemy</object>
