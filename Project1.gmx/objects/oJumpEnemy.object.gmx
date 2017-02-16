@@ -25,16 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialize the enemy
-enum e_state
+            <string>///Intialize the enemy
+enum e_jump_state
 {
     idle,
-    chase
+    attack
 }
-state = e_state.idle;
+state = e_jump_state.idle;
 vspd = 0;
 hspd = 0;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>105</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move_point</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>oPlayer.x</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>oPlayer.y</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>15</string>
           </argument>
         </arguments>
       </action>
@@ -58,25 +88,25 @@ hspd = 0;
             <kind>1</kind>
             <string>switch (state)
 {
-    case e_state.idle:
+    case e_range_state.idle:
     {
-        hspd = 0;
-        vspd = 0;
         if (distance_to_object(oPlayer) &lt; 100)
         {
-            state = e_state.chase;
+            state = e_range_state.attack;
         }
     }
     break;
-    case e_state.chase:
+    case e_range_state.attack:
     {
-        dir = sign(oPlayer.x - x);
-        vec = sign(oPlayer.y - y);
-        hspd = dir * 1;
-        vspd = vec * 1;
-        if (distance_to_object(oPlayer) &gt; 150)
+
+        if (distance_to_object(oPlayer)&lt; 100)
         {
-            state = e_state.idle;
+            if (alarm[0] = -1) alarm = 120;
+        }
+
+        if (distance_to_object(oPlayer) &gt; 125)
+        {
+            state = e_range_state.idle;
         }
     }
     break;
@@ -90,6 +120,7 @@ if (place_meeting(x+hspd, y, oParSolid))
         x += sign(hspd);
     }
     hspd = 0;
+    
 }
 
 //Move Horizontally
@@ -104,15 +135,39 @@ if (place_meeting(x, y+vspd, oParSolid))
         y += sign(vspd);
     }
     vspd = 0;
+    
 }
 
 //Move Vertically
 y += vspd;
 
-if (place_meeting(x,y,oPlayer))
-{
-    room_restart();
-}
+//if (place_meeting(x,y,oPlayer))
+//{
+//    room_restart();
+//}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oParSolid">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>speed = 0;
 </string>
           </argument>
         </arguments>

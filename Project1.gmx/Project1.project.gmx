@@ -113,6 +113,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\oFlyingEnemy</object>
       <object>objects\oRangeEnemy</object>
+      <object>objects\oJumpEnemy</object>
     </objects>
     <object>objects\oGame</object>
     <object>objects\oTouchCompatible</object>
