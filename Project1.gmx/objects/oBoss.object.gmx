@@ -39,15 +39,15 @@ hp = 100;
 
 if (hp &gt;= 66)
 {
-    path_start(path1, 10, true, true)
+    path_start(path1, 0.5, true, true)
 }
 else if (hp &gt;= 33)
 {
-    path_start(path2, 10, true, true)
+    path_start(path2, 0.5, true, true)
 }
 else
 {
-    path_start(path3, 10, true, true)
+    path_start(path3, 0.5, true, true)
 }
 </string>
           </argument>
