@@ -36,6 +36,19 @@ vspd = 0;
 hspd = 0;
 
 hp = 100;
+
+if (hp &gt;= 66)
+{
+    path_start(path1, 10, true, true)
+}
+else if (hp &gt;= 33)
+{
+    path_start(path2, 10, true, true)
+}
+else
+{
+    path_start(path3, 10, true, true)
+}
 </string>
           </argument>
         </arguments>
@@ -99,31 +112,7 @@ if (hp == 0)
     instance_create(x-32,y+32,oCratePoof);
 }
 
-switch (state)
-{
-    case e_boss_state.idle:
-    {
-        if (distance_to_object(oPlayer) &lt; 10000)
-        {
-            state = e_boss_state.attack;
-        }
-    }
-    break;
-    case e_boss_state.attack:
-    {
 
-        if (distance_to_object(oPlayer)&lt; 10000)
-        {
-            if (alarm[0] = -1) alarm = 120;
-        }
-
-        if (distance_to_object(oPlayer) &gt; 12500)
-        {
-            state = e_boss_state.idle;
-        }
-    }
-    break;
-}
 
 
 

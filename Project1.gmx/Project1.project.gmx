@@ -98,6 +98,8 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\path1</path>
+    <path>paths\path2</path>
+    <path>paths\path3</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\Approach.gml</script>
