@@ -32,23 +32,23 @@ enum e_boss_state
     attack
 }
 state = e_boss_state.idle;
-vspd = 0;
-hspd = 0;
+
 
 hp = 100;
 
 if (hp &gt;= 66)
 {
-    path_start(path1, 0.5, true, true)
+    path_start(path1, 5, true, true)
 }
 else if (hp &gt;= 33)
 {
-    path_start(path2, 0.5, true, true)
+    path_start(path2, 5, true, true)
 }
 else
 {
-    path_start(path3, 0.5, true, true)
+    path_start(path3, 5, true, true)
 }
+
 </string>
           </argument>
         </arguments>
@@ -101,7 +101,11 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//boss health
+            <string>
+
+
+
+//boss health
 if (hp == 0)
 {
     instance_destroy();
