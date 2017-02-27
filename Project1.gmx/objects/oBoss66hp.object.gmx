@@ -31,21 +31,13 @@ enum e_boss_state
     idle,
     attack
 }
-
-enum e_boss_is_a_bitch
-{
-    full,
-    wounded,
-    running_like_a_bitch
-}
-
 state = e_boss_state.idle;
 
 
 hp = 100;
-health_state = e_boss_is_a_bitch.full;
+prevHealth = 100;
 
-path_start(path1, 1, path_action_continue, true)
+path_start(path1, 5, path_action_continue, true)
     
 
 </string>
@@ -100,20 +92,37 @@ path_start(path1, 1, path_action_continue, true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hp &lt;= 66 &amp;&amp; health_state ==  e_boss_is_a_bitch.full)
+            <string>if (hp &lt;= 66)
 {
-    path_start(path2, 5, path_action_continue, true);
-    health_state = e_boss_is_a_bitch.wounded;
+    instance_destroy();
+    instance_create(x,y,oCratePoof);
+    instance_create(x+32,y+32,oCratePoof);
+    instance_create(x-32,y-32,oCratePoof);
+    instance_create(x+32,y-32,oCratePoof);
+    instance_create(x-32,y+32,oCratePoof);
 }
 
-if (hp &lt;= 33 &amp;&amp; health_state ==  e_boss_is_a_bitch.wounded)
+if (hp &lt;= 100 &amp; prevHealth &gt;= 100)
 {
-    path_start(path3, 5, path_action_continue, true);
-    health_state = e_boss_is_a_bitch.running_like_a_bitch;
+    path_start(path1, 5, path_action_continue, true)
 }
+
+else if (hp &lt; 66 &amp; prevHealth &gt; 66)
+{
+    path_end();
+    path_start(path2, 5, path_action_continue, true)
+}
+else if (hp &lt; 33 &amp; prevHealth &gt; 33)
+{
+    path_end();
+    path_start(path3, 5, path_action_continue, true)
+}
+
+prevHealth = hp
+
 
 //boss health
-if (hp &lt;= 0)
+if (hp == 0)
 {
     instance_destroy();
     instance_create(x,y,oCratePoof);
