@@ -89,6 +89,7 @@
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_range_attack</sprite>
     <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_boss_range_attack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -170,6 +171,7 @@
       <object>objects\otestobject</object>
     </objects>
     <object>objects\oRangeAttack</object>
+    <object>objects\oBossRangeAttack</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
