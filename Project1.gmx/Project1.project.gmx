@@ -24,9 +24,9 @@
       <sprite>sprites\sPlayerSlide</sprite>
       <sprite>sprites\sPlayerRoll</sprite>
       <sprites name="Attack">
-        <sprite>sprites\sPlayerJab</sprite>
         <sprite>sprites\sPlayerRollSlash</sprite>
         <sprite>sprites\sPlayerKunai</sprite>
+        <sprite>sprites\sPlayerJab</sprite>
       </sprites>
       <sprites name="Shield">
         <sprite>sprites\sPlayerSlideShield</sprite>
