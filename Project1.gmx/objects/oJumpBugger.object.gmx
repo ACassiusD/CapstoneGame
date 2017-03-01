@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>jumps = 0;
+mystate = 0;
 </string>
           </argument>
         </arguments>
@@ -49,6 +50,7 @@
           <argument>
             <kind>1</kind>
             <string>jumps = oPlayer.jumpCount;
+mystate = oPlayer.state;
 </string>
           </argument>
         </arguments>
@@ -72,7 +74,8 @@
           <argument>
             <kind>1</kind>
             <string>draw_text(100, 150, 
-    "Jumps: " + string(jumps)
+    "Jumps: " + string(jumps) +
+    "State: " + string(mystate)
      
 );
 </string>

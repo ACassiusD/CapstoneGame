@@ -40,13 +40,15 @@ airAccel    = 0.75;
 airFric     = 0.01;
 vxMax       = 6.00;
 vyMax       = 6.00;
-jumpHeight  = 10.00;
-gravNorm    = 0.65;
+jumpHeight  = 11.00;
+gravNorm    = 0.75;
 gravSlide   = 0.25; 
 
 clingTime   = 6.0;
 
 jumpCount = 2;
+
+dashOnCD = false;
 
 // Misc ///////////////////////////////////////////////////////////////////////
 
@@ -55,6 +57,7 @@ IDLE     = 10;
 RUN      = 11;
 JUMP     = 12;
 ROLL     = 13;
+DASH     = 14;
 
 // Initialize properties
 state  = IDLE;
@@ -96,6 +99,52 @@ kunai = 0;
           <argument>
             <kind>1</kind>
             <string>instance_create(0, 0, oFxRoomRestart);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = IDLE;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>dashOnCD = false;
 </string>
           </argument>
         </arguments>
@@ -228,6 +277,8 @@ repeat(abs(vx)) {
     else
         vx = 0;
 }
+
+show_debug_message(string(state));
 </string>
           </argument>
         </arguments>
@@ -290,15 +341,17 @@ if (onGround &amp;&amp; !onGroundPrev) {
 
 var kLeft, kRight, kUp, kDown, kJump, kJumpRelease, kAction, kBlock, kRollL, kRollR, tempAccel, tempFric, kLClick;
 
-kLeft        = keyboard_check(vk_left)  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
-kRight       = keyboard_check(vk_right) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
-kUp          = keyboard_check(vk_up)    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
-kDown        = keyboard_check(vk_down)  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
+kLeft        = keyboard_check(ord('A'))  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
+kRight       = keyboard_check(ord('D')) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
+kUp          = keyboard_check(ord('W'))    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
+kDown        = keyboard_check(ord('S'))  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
 
 kJump        = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed(0, gp_face1);
 kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
 
-kAction      = keyboard_check_pressed(ord('X'))  || gamepad_button_check_pressed(0, gp_face3);
+kAction      = keyboard_check_pressed(ord('P'))  || gamepad_button_check_pressed(0, gp_face3);
+kDash        = keyboard_check(ord('O'));
+
 kBlock       = keyboard_check(ord('C'))          || gamepad_button_check(0, gp_face2);
 
 //These 2 should be facotred out eventually
@@ -357,7 +410,7 @@ if (!onGround) {
     }
 }
 
-if (state != ROLL) {
+if (state != DASH) {
     // Left 
     if (kLeft &amp;&amp; !kRight &amp;&amp; !sticking) 
     {
@@ -392,7 +445,7 @@ if (!kRight &amp;&amp; !kLeft) {
     vx = Approach(vx, 0, tempFric); //Approach 0 x velocity
     
     //If we are not rolling we are idle
-    if (state != ROLL)
+    if (state != DASH)
         state = IDLE;
 } 
        
@@ -459,7 +512,7 @@ else if (kJumpRelease)
 }
 
 // Jump state
-if (!onGround)
+if (!onGround &amp;&amp; state != DASH)
     state = JUMP;
 // Run particles
 else if (random(100) &gt; 85 &amp;&amp; abs(vx) &gt; 0.5)
@@ -476,19 +529,17 @@ if (onGround &amp;&amp; !attacking) {
     if (state != ROLL) {
         if (kRollL) {
             facing = -1;
-            
             image_index  = 0;
             image_speed  = 0.5;
             sprite_index = sPlayerRoll;
-            
             state = ROLL;
-        } else if (kRollR) {
+        } 
+        else if (kRollR) 
+        {
             facing = 1;
-            
             image_index  = 0;
             image_speed  = 0.5;
             sprite_index = sPlayerRoll;
-            
             state = ROLL;
         }
     }
@@ -505,6 +556,29 @@ if (state == ROLL) {
             alarm[1] = -1;
     }
 }
+
+//// DASHING ////
+
+if(!attacking)
+{
+    if((kDash &amp;&amp; dashOnCD = false) &amp;&amp; (kLeft||kRight))
+    {
+        vx = 0;
+        state = DASH;
+        dashOnCD = true;
+        alarm[2] = 60;
+        vx = facing * 18;    
+        alarm[3] = 7;
+        sprite_index = sPlayerRoll;
+    }
+}
+
+if (state == DASH) {
+    
+    attacking = true;
+        vy = 0;
+}
+
     
 // Action
 if (!kBlock &amp;&amp; kAction) {
@@ -553,53 +627,6 @@ blocking = kBlock;
 
 xscale = Approach(xscale, 1, 0.05);
 yscale = Approach(yscale, 1, 0.05);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Hitbox
-
-//Destory all hitboxes
-with (oPlayerAtkBox)
-    instance_destroy();
-
-// Dash out of roll
-if (sprite_index == sPlayerRollSlash) {    
-    with (instance_create(x, y, oPlayerAtkBox)) {
-        bboxleft  = min(other.x + (5 * other.facing), other.x + (24 * other.facing));
-        bboxright = max(other.x + (5 * other.facing), other.x + (24 * other.facing));
-        
-        bboxtop    = other.y - 1;
-        bboxbottom = other.y + 8; 
-    }
-}
-    
-// Jab
-if (sprite_index == sPlayerJab &amp;&amp; round(image_index) &gt; 0) {    
-    with (instance_create(x, y, oPlayerAtkBox)) {
-        bboxleft  = min(other.x + (5 * other.facing), other.x + (30 * other.facing));
-        bboxright = max(other.x + (5 * other.facing), other.x + (30 * other.facing));
-        
-        bboxtop    = other.y - 1;
-        bboxbottom = other.y + 8; 
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -717,6 +744,53 @@ if(kRClick &amp;&amp; !kLClick &amp;&amp; instance_exists(oAbilityKunai)){
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Hitbox
+
+//Destory all hitboxes
+with (oPlayerAtkBox)
+    instance_destroy();
+
+// Dash out of roll
+if (sprite_index == sPlayerRoll) {    
+    with (instance_create(x, y, oPlayerAtkBox)) {
+        bboxleft  = min(other.x + (5 * other.facing), other.x + (60 * other.facing));
+        bboxright = max(other.x + (5 * other.facing), other.x + (60 * other.facing));
+        
+        bboxtop    = other.y - 1;
+        bboxbottom = other.y + 8; 
+    }
+}
+    
+// Jab
+if (sprite_index == sPlayerJab &amp;&amp; round(image_index) &gt; 0) {    
+    with (instance_create(x, y, oPlayerAtkBox)) {
+        bboxleft  = min(other.x + (5 * other.facing), other.x + (30 * other.facing));
+        bboxright = max(other.x + (5 * other.facing), other.x + (30 * other.facing));
+        
+        bboxtop    = other.y - 1;
+        bboxbottom = other.y + 8; 
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="7">
       <action>
@@ -739,10 +813,7 @@ if(kRClick &amp;&amp; !kLClick &amp;&amp; instance_exists(oAbilityKunai)){
     attacking = false;
     
 if (sprite_index == sPlayerRoll) {
-    if (!attacking)
-        alarm[1] = -1;
-            
-    state = IDLE;
+    attacking = false;
 }
 </string>
           </argument>
