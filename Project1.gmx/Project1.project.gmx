@@ -169,6 +169,7 @@
     <objects name="debug">
       <object>objects\oDebugger</object>
       <object>objects\otestobject</object>
+      <object>objects\oJumpBugger</object>
     </objects>
     <object>objects\oRangeAttack</object>
     <object>objects\oBossRangeAttack</object>

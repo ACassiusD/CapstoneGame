@@ -220,10 +220,6 @@
     <instance objName="oCrateSmall" x="368" y="208" name="inst_C2D52486" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="552" y="176" name="inst_6C30B7E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDebugger" x="0" y="24" name="inst_ACFB02C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="496" y="176" name="inst_2358F4E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="208" y="240" name="inst_B94E0941" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRangeEnemy" x="153" y="233" name="inst_0E5D0345" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oJumpEnemy" x="448" y="288" name="inst_71494414" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles0" x="440" y="296" w="8" h="8" xo="16" yo="56" id="10000274" name="inst_FD817065" depth="6" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

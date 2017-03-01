@@ -38,13 +38,15 @@ groundAccel = 0.50;
 groundFric  = 2.00;
 airAccel    = 0.75;
 airFric     = 0.01;
-vxMax       = 4.00;
+vxMax       = 6.00;
 vyMax       = 6.00;
-jumpHeight  = 6.00;
-gravNorm    = 0.50;
+jumpHeight  = 10.00;
+gravNorm    = 0.65;
 gravSlide   = 0.25; 
 
 clingTime   = 6.0;
+
+jumpCount = 2;
 
 // Misc ///////////////////////////////////////////////////////////////////////
 
@@ -288,10 +290,10 @@ if (onGround &amp;&amp; !onGroundPrev) {
 
 var kLeft, kRight, kUp, kDown, kJump, kJumpRelease, kAction, kBlock, kRollL, kRollR, tempAccel, tempFric, kLClick;
 
-kLeft        = keyboard_check(ord('A'))  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
-kRight       = keyboard_check(ord('D')) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
-kUp          = keyboard_check(ord('W'))    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
-kDown        = keyboard_check(ord('S'))  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
+kLeft        = keyboard_check(vk_left)  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
+kRight       = keyboard_check(vk_right) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
+kUp          = keyboard_check(vk_up)    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
+kDown        = keyboard_check(vk_down)  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
 
 kJump        = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed(0, gp_face1);
 kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
@@ -309,38 +311,19 @@ kRClick      = mouse_check_button_pressed(mb_right) || gamepad_button_check_pres
 
 
 
-if (instance_exists(oTouchCompatible)) {
-    // Disable double-click (increases input accuracy)
-    device_mouse_dbclick_enable(false);
-    
-    // LOL, magic numbers
-    
-    for (var i = 0; i &lt; 8; ++i) {
-        if (!kLeft)
-            kLeft = device_mouse_check_button(i, mb_left) &amp;&amp; device_mouse_x(i) &gt; view_xview[0] + 16 &amp;&amp; device_mouse_x(i) &lt; view_xview[0] + 16 + 64 &amp;&amp; device_mouse_y(i) &gt; view_yview[0] + 280 &amp;&amp; device_mouse_y(i) &lt; view_yview[0] + 280 + 64;
-        if (!kRight)
-        kRight = device_mouse_check_button(i, mb_left) &amp;&amp; device_mouse_x(i) &gt; view_xview[0] + 16 + 80 &amp;&amp; device_mouse_x(i) &lt; view_xview[0] + 16 + 64 + 80 &amp;&amp; device_mouse_y(i) &gt; view_yview[0] + 280 &amp;&amp; device_mouse_y(i) &lt; view_yview[0] + 280 + 64;   
-        
-        if (!kJump)
-            kJump = device_mouse_check_button_pressed(i, mb_left) &amp;&amp; device_mouse_x(i) &gt; view_xview[0] + 640 - 64 - 16 &amp;&amp; device_mouse_x(i) &lt; view_xview[0] + 640 - 16 &amp;&amp; device_mouse_y(i) &gt; view_yview[0] + 280 &amp;&amp; device_mouse_y(i) &lt; view_yview[0] + 280 + 64;
-        if (!kJumpRelease)
-            kJumpRelease = device_mouse_check_button_released(i, mb_left) &amp;&amp; device_mouse_x(i) &gt; view_xview[0] + 640 - 64 - 16 &amp;&amp; device_mouse_x(i) &lt; view_xview[0] + 640 - 16 &amp;&amp; device_mouse_y(i) &gt; view_yview[0] + 280 &amp;&amp; device_mouse_y(i) &lt; view_yview[0] + 280 + 64;
-        
-        if (!kAction)
-            kAction = device_mouse_check_button_pressed(i, mb_left) &amp;&amp; device_mouse_x(i) &gt; view_xview[0] + 640 - 64 - 16 - 80 &amp;&amp; device_mouse_x(i) &lt; view_xview[0] + 640 - 16 - 80 &amp;&amp; device_mouse_y(i) &gt; view_yview[0] + 280 &amp;&amp; device_mouse_y(i) &lt; view_yview[0] + 280 + 64;
-    }
-     
-    //draw_sprite(sJumpButton, 0, view_xview[0] + 640 - 64 - 16, view_yview[0] + 280);
-    //draw_sprite(sAtkButton, 0, view_xview[0] + 640 - 64 - 96, view_yview[0] + 280); 
-}
+//////////////////////////////// Movement ///////////////////////////////////////////
 
-// Movement ///////////////////////////////////////////////////////////////////
 
 // Apply the correct form of acceleration and friction
 if (onGround) {  
     tempAccel = groundAccel;
     tempFric  = groundFric;
+    jumpCount = 2;
 } else {
+    if(cLeft||cRight)
+    {
+        jumpCount = 2;
+    }
     tempAccel = airAccel;
     tempFric  = airFric;
 }
@@ -413,7 +396,8 @@ if (!kRight &amp;&amp; !kLeft) {
         state = IDLE;
 } 
        
-// Wall jump
+// Wall jumping
+
 if (kJump &amp;&amp; cLeft &amp;&amp; !onGround) {
     yscale = 1.33;
     xscale = 0.67;
@@ -440,22 +424,36 @@ if (kJump &amp;&amp; cRight &amp;&amp; !onGround) {
     }  
 }
  
-// Jump 
-if (kJump) { 
-    if (onGround) {
+// Jump
+if (kJump)
+{ 
+    if (onGround) 
+    {
         // Fall thru platform
-        if (kDown) {
+        if (kDown) 
+        {
             if (place_meeting(x, y + 1, oParJumpThru))
                 ++y;
-        } else {
+        } 
+        else if(jumpCount &gt; 0) 
+        {
             vy = -jumpHeight;
-            
             yscale = 1.33;
             xscale = 0.67;
+            jumpCount--;
         }
     }
+    else if(!onGround &amp;&amp; jumpCount &gt; 0)
+    {
+        vy = -jumpHeight;
+        yscale = 1.33;
+        xscale = 0.67;
+        jumpCount--;
+    }
 // Variable jumping
-} else if (kJumpRelease) { 
+} 
+else if (kJumpRelease) 
+{ 
     if (vy &lt; 0)
         vy *= 0.25;
 }
