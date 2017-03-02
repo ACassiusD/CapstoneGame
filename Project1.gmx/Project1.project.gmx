@@ -97,6 +97,7 @@
     <sprite>sprites\spr_range_attack</sprite>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_boss_range_attack</sprite>
+    <sprite>sprites\nothing</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
