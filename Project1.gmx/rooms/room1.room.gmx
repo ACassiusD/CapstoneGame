@@ -51,25 +51,13 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="oPlayer" x="480" y="640" name="inst_1FDD2D83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlayer" x="480" y="512" name="inst_1FDD2D83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBoss" x="192" y="672" name="inst_56040F73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="800" y="544" name="inst_DEBE2568" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="160" y="544" name="inst_AB0199FC" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="480" y="416" name="inst_A660ED6B" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="640" y="480" name="inst_5278240E" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="320" y="480" name="inst_2DDD4346" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="640" y="352" name="inst_B7423B2D" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="800" y="288" name="inst_EE60B881" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="320" y="352" name="inst_279BE4BE" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="160" y="288" name="inst_1C01399C" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="320" y="192" name="inst_82BA4F83" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="640" y="192" name="inst_DCD5847A" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="480" y="128" name="inst_F91910C0" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="896" y="256" name="inst_DEBE2568" locked="0" code="" scaleX="-10" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oJumpBugger" x="64" y="64" name="inst_FA9D04AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="0" y="0" name="inst_C2FCCF13" locked="0" code="" scaleX="64" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="0" y="0" name="inst_D720092A" locked="0" code="" scaleX="2" scaleY="48" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="32" y="736" name="inst_C7B9C3B3" locked="0" code="" scaleX="62" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="992" y="832" name="inst_6ED27F5A" locked="0" code="" scaleX="2" scaleY="-54.466667175293" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="320" y="704" name="inst_9ADFB68A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="352" y="704" name="inst_13406A75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="352" y="704" name="inst_9036F715" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -94,6 +82,14 @@
     <instance objName="oCrateSmall" x="800" y="704" name="inst_5BA28429" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="832" y="704" name="inst_A432AB7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCrateSmall" x="864" y="704" name="inst_10C5645E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="96" y="512" name="inst_5F65204C" locked="0" code="" scaleX="7.40000009536743" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="320" y="448" name="inst_6F099920" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="416" y="640" name="inst_6692AEC2" locked="0" code="" scaleX="10" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="832" y="512" name="inst_9C0DF8F0" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="448" y="320" name="inst_0D9C0E11" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="416" y="128" name="inst_9B96A082" locked="0" code="" scaleX="10" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="96" y="256" name="inst_CA43C67C" locked="0" code="" scaleX="10" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="576" y="448" name="inst_4ADD49FA" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles0" x="0" y="480" w="8" h="8" xo="0" yo="0" id="10000336" name="inst_645354B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
