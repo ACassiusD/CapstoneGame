@@ -778,22 +778,22 @@ with (oPlayerAtkBox)
 // Dash out of roll
 if (sprite_index == sPlayerRoll) {    
     with (instance_create(x, y, oPlayerAtkBox)) {
-        bboxleft  = min(other.x + (5 * other.facing), other.x + (60 * other.facing));
-        bboxright = max(other.x + (5 * other.facing), other.x + (60 * other.facing));
+        bboxleft  = min(other.x + (24 * other.facing), other.x + (108 * other.facing));
+        bboxright = max(other.x + (24 * other.facing), other.x + (108 * other.facing));
         
-        bboxtop    = other.y - 1;
-        bboxbottom = other.y + 8; 
+        bboxtop    = other.y - 12;
+        bboxbottom = other.y + 12; 
     }
 }
     
 // Jab
 if (sprite_index == sPlayerJab &amp;&amp; round(image_index) &gt; 0) {    
     with (instance_create(x, y, oPlayerAtkBox)) {
-        bboxleft  = min(other.x + (5 * other.facing), other.x + (30 * other.facing));
-        bboxright = max(other.x + (5 * other.facing), other.x + (30 * other.facing));
+        bboxleft  = min(other.x + (24 * other.facing), other.x + (108 * other.facing));
+        bboxright = max(other.x + (24 * other.facing), other.x + (108 * other.facing));
         
-        bboxtop    = other.y - 1;
-        bboxbottom = other.y + 8; 
+        bboxtop    = other.y - 12;
+        bboxbottom = other.y + 12; 
     }
 }
 </string>
