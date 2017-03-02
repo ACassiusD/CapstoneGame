@@ -55,6 +55,7 @@ state = e_range_state.idle;
           <argument>
             <kind>1</kind>
             <string>instance_create(x,y,oRangeAttack);
+audio_play_sound(sn_range_attack, 10, false);
 </string>
           </argument>
         </arguments>

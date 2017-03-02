@@ -63,6 +63,7 @@ bboxbottom = 0;
         
         alarm[0] = 3;
         cut = true;
+        audio_play_sound(sn_hit, 10, false);
     }
 }
 
@@ -70,6 +71,7 @@ with (oParCrate) {
     // Break crate
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
         instance_destroy();
+        audio_play_sound(sn_hit, 10, false);
     }
 }
 
@@ -77,6 +79,7 @@ with (obj_enemy) {
     // Killing Enemy
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
         instance_destroy();
+        audio_play_sound(sn_hit, 10, false);
     }
 }
 
@@ -84,6 +87,7 @@ with (oFlyingEnemy) {
     // Killing Enemy
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
         instance_destroy();
+        audio_play_sound(sn_hit, 10, false);
     }
 }
 
@@ -91,6 +95,7 @@ with (oRangeEnemy) {
     // Killing Enemy
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
         instance_destroy();
+        audio_play_sound(sn_hit, 10, false);
     }
 }
 
@@ -98,6 +103,7 @@ with (oBoss) {
     // Killing Enemy
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
         hp = hp - 0.5;
+        audio_play_sound(sn_hit, 10, false);
 
     }
 }
