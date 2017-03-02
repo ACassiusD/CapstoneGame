@@ -350,7 +350,7 @@ kJump        = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed
 kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
 
 kAction      = keyboard_check_pressed(ord('P'))  || gamepad_button_check_pressed(0, gp_face3);
-kDash        = keyboard_check(ord('O'));
+kDash        = keyboard_check(ord('O'))          || gamepad_button_check_pressed(0, gp_face4);
 
 kBlock       = keyboard_check(ord('C'))          || gamepad_button_check(0, gp_face2);
 
