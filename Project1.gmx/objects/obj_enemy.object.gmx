@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initalize the enemy
 dir = -1;
-movespeed = 0.5;
+movespeed = 1;
 grav = 1;
 hspd = 0;
 vspd = 0;

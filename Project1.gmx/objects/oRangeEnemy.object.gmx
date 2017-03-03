@@ -82,7 +82,7 @@ audio_play_sound(sn_range_attack, 10, false);
 {
     case e_range_state.idle:
     {
-        if (distance_to_object(oPlayer) &lt; 150)
+        if (distance_to_object(oPlayer) &lt; 375)
         {
             state = e_range_state.attack;
         }
@@ -91,12 +91,12 @@ audio_play_sound(sn_range_attack, 10, false);
     case e_range_state.attack:
     {
 
-        if (distance_to_object(oPlayer)&lt; 150)
+        if (distance_to_object(oPlayer)&lt; 375)
         {
             if (alarm[0] = -1) alarm = 120;
         }
 
-        if (distance_to_object(oPlayer) &gt; 200)
+        if (distance_to_object(oPlayer) &gt; 500)
         {
             state = e_range_state.idle;
         }
