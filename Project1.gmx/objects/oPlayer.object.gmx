@@ -362,10 +362,20 @@ kRollR       = keyboard_check_pressed(ord('6'));
 kLClick      = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderlb); //Checking if left mouse button or right trigger was clicked.
 kRClick      = mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0, gp_shoulderrb);
 
+dbgClick = gamepad_button_check_pressed(0, gp_padd);
+dbg2Click = gamepad_button_check_pressed(0, gp_padu);
 
 
 //////////////////////////////// Movement ///////////////////////////////////////////
 
+
+if (dbgClick) {
+    room_goto(room2)
+}
+
+if (dbg2Click) {
+    room_goto(room1)
+}
 
 // Apply the correct form of acceleration and friction
 if (onGround) {  
