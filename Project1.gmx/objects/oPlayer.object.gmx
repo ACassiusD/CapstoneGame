@@ -40,8 +40,8 @@ airAccel    = 0.75;
 airFric     = 0.01;
 vxMax       = 6.00;
 vyMax       = 6.00;
-jumpHeight  = 11.00;
-gravNorm    = 0.75;
+jumpHeight  = 13.00;
+gravNorm    = 0.80;
 gravSlide   = 0.25; 
 
 clingTime   = 6.0;
@@ -277,8 +277,6 @@ repeat(abs(vx)) {
     else
         vx = 0;
 }
-
-show_debug_message(string(state));
 </string>
           </argument>
         </arguments>
@@ -339,31 +337,27 @@ if (onGround &amp;&amp; !onGroundPrev) {
 
 // Input //////////////////////////////////////////////////////////////////////
 
-var kLeft, kRight, kUp, kDown, kJump, kJumpRelease, kAction, kBlock, kRollL, kRollR, tempAccel, tempFric, kLClick;
+var kLeft, kRight, kDown, kJump, kJumpRelease, kAction, kBlock, tempAccel, tempFric, kLClick;
 
 kLeft        = keyboard_check(ord('A'))  || gamepad_axis_value(0, gp_axislh) &lt; -0.4;
 kRight       = keyboard_check(ord('D')) || gamepad_axis_value(0, gp_axislh) &gt;  0.4;
-kUp          = keyboard_check(ord('W'))    || gamepad_axis_value(0, gp_axislv) &lt; -0.4;
-kDown        = keyboard_check(ord('S'))  || gamepad_axis_value(0, gp_axislv) &gt;  0.4;
+kDown        = keyboard_check(ord('S'))         ||gamepad_axis_value(0, gp_axislv) &gt;  0.4;
 
-kJump        = keyboard_check_pressed(vk_space)  || gamepad_button_check_pressed(0, gp_face1);
-kJumpRelease = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
+kJump        = keyboard_check_pressed(vk_space) || gamepad_button_check_pressed(0, gp_face1);
+kJumpRelease = keyboard_check_released(vk_space)|| gamepad_button_check_released(0, gp_face1);
 
-kAction      = keyboard_check_pressed(ord('P'))  || gamepad_button_check_pressed(0, gp_face3);
-kDash        = keyboard_check(ord('O'))          || gamepad_button_check_pressed(0, gp_face4);
+kAction      = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_face3);
+kDash        = keyboard_check(vk_shift)         || gamepad_button_check_pressed(0, gp_face4);
 
-kBlock       = keyboard_check(ord('C'))          || gamepad_button_check(0, gp_face2);
-
-//These 2 should be facotred out eventually
-kRollL       = keyboard_check_pressed(ord('4'));
-kRollR       = keyboard_check_pressed(ord('6'));
+kBlock       = keyboard_check(ord('C'))         || gamepad_button_check(0, gp_face2);
 
 //Ability part 1 and part 2
-kLClick      = mouse_check_button_pressed(mb_left) || gamepad_button_check_pressed(0, gp_shoulderlb); //Checking if left mouse button or right trigger was clicked.
-kRClick      = mouse_check_button_pressed(mb_right) || gamepad_button_check_pressed(0, gp_shoulderrb);
+kAbility1M      = mouse_check_button_pressed(mb_right);
+kAbility1GP     = gamepad_button_check_pressed(0, gp_shoulderlb);
+kAbility2      = keyboard_check(ord('S')) || gamepad_button_check_pressed(0, gp_shoulderrb);
 
-dbgClick = gamepad_button_check_pressed(0, gp_padd);
-dbg2Click = gamepad_button_check_pressed(0, gp_padu);
+dbgClick = gamepad_button_check_pressed(0, gp_padd) || keyboard_check(vk_left);
+dbg2Click = gamepad_button_check_pressed(0, gp_padu)|| keyboard_check(vk_right);
 
 
 //////////////////////////////// Movement ///////////////////////////////////////////
@@ -540,39 +534,6 @@ if (cRight &amp;&amp; !onGround)
 else if (cLeft &amp;&amp; !onGround)
     facing = 1;
 
-// Roll
-if (onGround &amp;&amp; !attacking) {
-    if (state != ROLL) {
-        if (kRollL) {
-            facing = -1;
-            image_index  = 0;
-            image_speed  = 0.5;
-            sprite_index = sPlayerRoll;
-            state = ROLL;
-        } 
-        else if (kRollR) 
-        {
-            facing = 1;
-            image_index  = 0;
-            image_speed  = 0.5;
-            sprite_index = sPlayerRoll;
-            state = ROLL;
-        }
-    }
-}
-
-// Roll speed
-if (state == ROLL) {
-    vx = facing * 4.5;
-    
-    // Break out of roll
-    if (!onGround || (cLeft || cRight)) {
-        state = IDLE;
-        if (!attacking)
-            alarm[1] = -1;
-    }
-}
-
 //// DASHING ////
 
 if(!attacking)
@@ -668,7 +629,7 @@ yscale = Approach(yscale, 1, 0.05);
             <kind>1</kind>
             <string>///Abilities
 //Throwing Kunai
-if(kLClick){
+if(kAbility1GP){
  
     //Destory any existing Kunai
     if(instance_exists(oAbilityKunai))
@@ -695,24 +656,39 @@ if(kLClick){
  
         kunai.direction = kunai.image_angle;
         kunai.image_angle = kunai.direction;    
-        kunai.speed = kunai.throwSpeed;   
-            
-        //kunai.hspeed=+kunai.throwSpeed*h_point;
-        //kunai.vspeed=+kunai.throwSpeed*v_point;       
+        kunai.speed = kunai.throwSpeed;       
      }    
-    //angle = degtorad(dir);
-    //kunai.image_angle = point_direction(x, y, mouse_x, mouse_y);
+}
+
+//Throwing Kunai
+if(kAbility1M){
+ 
+    //Destory any existing Kunai
+    if(instance_exists(oAbilityKunai))
+        {
+            with(oAbilityKunai)
+            {                     
+                instance_destroy();
+            }
+        }   
+        
+    //Create new kunai
+    kunai = instance_create(x, y, oAbilityKunai); 
     
-    //kunai.vx = kunai.vel * cos(angle);
-    //kunai.vy = kunai.vel * -sin(angle);
-   
-    //kunai.vx += kunai.throwSpeed * h_point;
-    //kunai.vy += kunai.throwSpeed * v_point;  
+        
+    dir = point_direction(x , y, mouse_x, mouse_y);
+    show_debug_message(dir);
+    angle = degtorad(dir);
+    show_debug_message(angle);
+    kunai.image_angle = dir;
+    kunai.direction = kunai.image_angle;
+     
+    kunai.speed = kunai.throwSpeed; 
 }
 
 
 //Kunai Teleport
-if(kRClick &amp;&amp; !kLClick &amp;&amp; instance_exists(oAbilityKunai)){ 
+if(kAbility2 &amp;&amp; (!kAbility1M || !kAbility1GP) &amp;&amp; instance_exists(oAbilityKunai)){ 
     
     //Make sure the kunai is not currently moving
     if(kunai.speed &lt;=0) 

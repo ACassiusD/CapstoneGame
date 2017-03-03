@@ -94,6 +94,7 @@
     <sprite>sprites\sprite54</sprite>
     <sprite>sprites\sprite55</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_FlyingEmemy</sprite>
     <sprite>sprites\spr_range_attack</sprite>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_boss_range_attack</sprite>
@@ -178,6 +179,7 @@
       <object>objects\oDebugger</object>
       <object>objects\otestobject</object>
       <object>objects\oJumpBugger</object>
+      <object>objects\oDebuggerControls</object>
     </objects>
     <object>objects\oRangeAttack</object>
     <object>objects\oBossRangeAttack</object>
