@@ -185,6 +185,7 @@
     <object>objects\oBossRangeAttack</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmLevel1</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
     <room>rooms\rmTest</room>
