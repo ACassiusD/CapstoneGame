@@ -99,6 +99,8 @@
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_boss_range_attack</sprite>
     <sprite>sprites\nothing</sprite>
+    <sprite>sprites\title</sprite>
+    <sprite>sprites\spr_arrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -120,7 +122,11 @@
     <script>scripts\PlatformCheck.gml</script>
     <script>scripts\EntityStep.gml</script>
     <script>scripts\GrassCut.gml</script>
+    <script>scripts\scr_menu.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_menu</font>
+  </fonts>
   <objects name="objects">
     <objects name="Bosses">
       <object>objects\oBoss</object>
@@ -183,8 +189,11 @@
     </objects>
     <object>objects\oRangeAttack</object>
     <object>objects\oBossRangeAttack</object>
+    <object>objects\objTitle</object>
+    <object>objects\obj_menu</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rmTitleScreen</room>
     <room>rooms\rmLevel1</room>
     <room>rooms\room1</room>
     <room>rooms\room2</room>
