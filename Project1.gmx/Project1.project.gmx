@@ -16,6 +16,7 @@
     <sound>sound\sn_boss_music</sound>
     <sound>sound\sn_music1</sound>
     <sound>sound\sn_hit</sound>
+    <sound>sound\sn_music0</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
@@ -101,6 +102,8 @@
     <sprite>sprites\nothing</sprite>
     <sprite>sprites\title</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprite>sprites\spr_fire</sprite>
+    <sprite>sprites\spr_title</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -191,6 +194,8 @@
     <object>objects\oBossRangeAttack</object>
     <object>objects\objTitle</object>
     <object>objects\obj_menu</object>
+    <object>objects\obj_fire</object>
+    <object>objects\obj_title</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTitleScreen</room>
