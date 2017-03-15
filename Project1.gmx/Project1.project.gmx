@@ -104,6 +104,7 @@
     <sprite>sprites\spr_arrow</sprite>
     <sprite>sprites\spr_fire</sprite>
     <sprite>sprites\spr_title</sprite>
+    <sprite>sprites\spr_smoke</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg0</background>
@@ -196,6 +197,7 @@
     <object>objects\obj_menu</object>
     <object>objects\obj_fire</object>
     <object>objects\obj_title</object>
+    <object>objects\obj_smoke</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTitleScreen</room>

@@ -693,6 +693,7 @@ if(kAbility2 &amp;&amp; (!kAbility1M || !kAbility1GP) &amp;&amp; instance_exists
     //Make sure the kunai is not currently moving
     if(kunai.speed &lt;=0) 
     {
+        instance_create(x, y, obj_smoke);
         //I cant find any easier way to initialize all these variables.
         //2 sets of varaibles are being instantiated because we will check 2 different ways
         //  of getting unstuck from the wall and choose the best option
