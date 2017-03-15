@@ -725,6 +725,7 @@ if(kAbility2 &amp;&amp; (!kAbility1M || !kAbility1GP) &amp;&amp; instance_exists
         {x = dir1X; y = dir1Y;}
         else
         {x = dir2X; y = dir2Y;}
+        instance_create(x, y, obj_smoke);
             
         //Delete the kunai object after the teleport
         if(instance_exists(oAbilityKunai))
