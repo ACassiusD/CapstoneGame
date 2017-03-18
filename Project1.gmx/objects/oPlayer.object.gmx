@@ -34,10 +34,10 @@ facing = 1;
 
 // Movement ///////////////////////////////////////////////////////////////////
 
-groundAccel = 0.50;
-groundFric  = 2.00;
+groundAccel = 0.70;
+groundFric  = 0.60;
 airAccel    = 0.75;
-airFric     = 0.01;
+airFric     = 0.10;
 vxMax       = 6.00;
 vyMax       = 6.00;
 jumpHeight  = 13.00;
@@ -538,7 +538,7 @@ else if (cLeft &amp;&amp; !onGround)
 
 if(!attacking)
 {
-    if((kDash &amp;&amp; dashOnCD = false) &amp;&amp; (kLeft||kRight))
+    if((kDash &amp;&amp; dashOnCD = false))
     {
         vx = 0;
         state = DASH;
@@ -630,39 +630,42 @@ yscale = Approach(yscale, 1, 0.05);
             <string>///Abilities
 //Throwing Kunai
 if(kAbility1GP){
- 
-    //Destory any existing Kunai
-    if(instance_exists(oAbilityKunai))
-        {
-            with(oAbilityKunai)
-            {                     
-                instance_destroy();
-            }
-        }   
+
+    if((!instance_exists(oAbilityKunai)) || (instance_exists(oAbilityKunai) &amp;&amp; kunai.speed &lt;= 0))
+    {
+         //Destory any existing Kunai
+        if(instance_exists(oAbilityKunai))
+            {
+                with(oAbilityKunai)
+                {                     
+                    instance_destroy();
+                }
+            }   
         
-    //Create new kunai
-    kunai = instance_create(x, y, oAbilityKunai); 
-    show_debug_message(kunai);
-    
-    //Get the points of the game pad
-    var h_point = gamepad_axis_value(0, gp_axisrh);
-    var v_point = gamepad_axis_value(0, gp_axisrv);
-   
-     if (h_point != 0.0 || v_point != 0.0) {
-         
-        pdir = point_direction(0 , 0, h_point, v_point);
-        var dif = angle_difference(pdir, image_angle);
-        kunai.image_angle = dif;  
- 
-        kunai.direction = kunai.image_angle;
-        kunai.image_angle = kunai.direction;    
-        kunai.speed = kunai.throwSpeed;       
-     }    
+        //Create new kunai
+        kunai = instance_create(x, y, oAbilityKunai); 
+        show_debug_message(kunai);
+        
+        //Get the points of the game pad
+        var h_point = gamepad_axis_value(0, gp_axisrh);
+        var v_point = gamepad_axis_value(0, gp_axisrv);
+       
+         if (h_point != 0.0 || v_point != 0.0) {
+             
+            pdir = point_direction(0 , 0, h_point, v_point);
+            var dif = angle_difference(pdir, image_angle);
+            kunai.image_angle = dif;  
+     
+            kunai.direction = kunai.image_angle;
+            kunai.image_angle = kunai.direction;    
+            kunai.speed = kunai.throwSpeed;       
+         }    
+    }
 }
 
 //Throwing Kunai
 if(kAbility1M){
- 
+
     //Destory any existing Kunai
     if(instance_exists(oAbilityKunai))
         {
@@ -675,7 +678,6 @@ if(kAbility1M){
     //Create new kunai
     kunai = instance_create(x, y, oAbilityKunai); 
     
-        
     dir = point_direction(x , y, mouse_x, mouse_y);
     show_debug_message(dir);
     angle = degtorad(dir);
@@ -686,9 +688,11 @@ if(kAbility1M){
     kunai.speed = kunai.throwSpeed; 
 }
 
-
+   
 //Kunai Teleport
 if(kAbility2 &amp;&amp; (!kAbility1M || !kAbility1GP) &amp;&amp; instance_exists(oAbilityKunai)){ 
+    
+    show_debug_message("Throw")
     
     //Make sure the kunai is not currently moving
     if(kunai.speed &lt;=0) 
@@ -734,8 +738,9 @@ if(kAbility2 &amp;&amp; (!kAbility1M || !kAbility1GP) &amp;&amp; instance_exists
                 instance_destroy();
             kunai = null;  
         }   
-    }
+    }   
 }
+
 
 </string>
           </argument>
