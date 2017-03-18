@@ -64,6 +64,7 @@
     <instance objName="oBlock" x="0" y="352" name="inst_E31F7C0D" locked="0" code="" scaleX="6" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="544" y="352" name="inst_6078890D" locked="0" code="" scaleX="62" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="0" y="0" name="inst_E92A7AD1" locked="0" code="" scaleX="2.13000011444092" scaleY="64" colour="4294967295" rotation="0"/>
+    <instance objName="oJumpBugger" x="64" y="192" name="inst_1172D77A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
