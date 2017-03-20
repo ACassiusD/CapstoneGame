@@ -40,8 +40,8 @@ groundFric  = 1.00;
 airAccel    = 0.75;
 airFric     = 0.10;
 vxMax       = 10.00;
-vyMax       = 6.00;
-jumpHeight  = 13.00;
+vyMax       = 10.00;
+jumpHeight  = 12.00;
 gravNorm    = 0.80;
 gravSlide   = 0.25; 
 
