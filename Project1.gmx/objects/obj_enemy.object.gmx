@@ -61,6 +61,8 @@ image_speed = 0.2
 hspd = dir * movespeed;
 vspd += grav;
 
+image_xscale = dir;
+
 //Horizontal Collisions
 if (place_meeting(x+hspd, y, oParSolid))
 {
@@ -71,6 +73,7 @@ if (place_meeting(x+hspd, y, oParSolid))
     hspd = 0;
     
     dir *= -1;
+    
     
 }
 
@@ -87,7 +90,7 @@ if (place_meeting(x, y+vspd, oParSolid))
     }
     vspd = 0;
     
-    if (fearOfHeights) &amp;&amp; !position_meeting(x+(sprite_width/2)*dir, y+(sprite_height/2)+8, oParSolid)
+    if (fearOfHeights) &amp;&amp; !position_meeting(x+(sprite_width/2)+8, y+(sprite_height/2)+8, oParSolid)
     {
         dir *= -1;
     }
@@ -109,6 +112,7 @@ if (place_meeting(x,y,oPlayer))
         instance_destroy();
     }
 }
+
 
 
 </string>
