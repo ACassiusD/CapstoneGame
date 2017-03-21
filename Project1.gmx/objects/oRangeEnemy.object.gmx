@@ -106,7 +106,10 @@ audio_play_sound(sn_range_attack, 10, false);
 
 if (place_meeting(x,y,oPlayer))
 {
-    room_restart();
+    with(oPlayer)
+    {
+        instance_destroy();
+    }
 }
 
 </string>

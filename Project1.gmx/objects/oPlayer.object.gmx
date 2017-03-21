@@ -880,7 +880,8 @@ if (sprite_index == sPlayerRoll) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_restart();
+            <string>
+instance_destroy();   
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text_transformed(x,y,"Death Counter: " + string(global.deaths),0.5,0.5,image_angle) 
+            <string>draw_set_color(c_red);
+draw_text_transformed(x,y,"Death Counter: " + string(global.deaths),0.5,0.5,image_angle);
+draw_set_color(c_red);
+
 </string>
           </argument>
         </arguments>

@@ -62,7 +62,10 @@
 
 if (place_meeting(x,y,oPlayer))
 {
-    room_restart();
+    with(oPlayer)
+    {
+        instance_destroy();
+    }
 }
 </string>
           </argument>

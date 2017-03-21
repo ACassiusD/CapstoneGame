@@ -70,13 +70,16 @@ hspd = 0;
     break;
     case e_state.chase:
     {
-        dir = sign(oPlayer.x - x);
-        vec = sign(oPlayer.y - y);
-        hspd = dir * 2;
-        vspd = vec * 2;
-        if (distance_to_object(oPlayer) &gt; 375)
-        {
-            state = e_state.idle;
+        if (instance_exists(oPlayer)){
+    
+            dir = sign(oPlayer.x - x);
+            vec = sign(oPlayer.y - y);
+            hspd = dir * 2;
+            vspd = vec * 2;
+            if (distance_to_object(oPlayer) &gt; 375)
+            {
+                state = e_state.idle;
+            }
         }
     }
     break;
@@ -111,7 +114,10 @@ y += vspd;
 
 if (place_meeting(x,y,oPlayer))
 {
-    room_restart();
+    with(oPlayer)
+    {
+        instance_destroy();
+    }
 }
 </string>
           </argument>
