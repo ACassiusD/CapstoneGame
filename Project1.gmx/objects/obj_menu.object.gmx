@@ -55,8 +55,8 @@ mpos = 0;
           <argument>
             <kind>1</kind>
             <string>var move = 0;
-move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")),0);
-move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")),0);
+move -= max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")),gamepad_axis_value(0, gp_axislv) &lt; -0.5,0);
+move += max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")),gamepad_axis_value(0, gp_axislv) &gt; 0.5,0);
 
 if (move != 0)
 {
