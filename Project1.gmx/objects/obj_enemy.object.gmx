@@ -32,6 +32,9 @@ grav = 1;
 hspd = 0;
 vspd = 0;
 fearOfHeights = 1;
+
+image_speed = 0.2
+
 </string>
           </argument>
         </arguments>
@@ -68,6 +71,7 @@ if (place_meeting(x+hspd, y, oParSolid))
     hspd = 0;
     
     dir *= -1;
+    
 }
 
 //Move Horizontally

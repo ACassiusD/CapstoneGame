@@ -49,6 +49,10 @@ path_start(path1, 3, path_action_continue, true)
 
 audio_play_sound(sn_boss_howl, 10, false);
 
+sprite_index = spr_smoke_boss;
+image_speed = 0.1;
+image_xscale = 3;
+image_yscale = 3;
 </string>
           </argument>
         </arguments>

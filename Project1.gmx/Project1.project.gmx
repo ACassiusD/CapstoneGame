@@ -17,6 +17,7 @@
     <sound>sound\sn_music1</sound>
     <sound>sound\sn_hit</sound>
     <sound>sound\sn_music0</sound>
+    <sound>sound\sn_poof</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
@@ -104,6 +105,14 @@
     <sprite>sprites\nothing</sprite>
     <sprite>sprites\title</sprite>
     <sprite>sprites\spr_arrow</sprite>
+    <sprites name="Enemies">
+      <sprite>sprites\spr_walk_enemy_L</sprite>
+      <sprite>sprites\spr_walk_enemy_R</sprite>
+      <sprite>sprites\spr_flying_enemy</sprite>
+      <sprite>sprites\spr_range_idle</sprite>
+      <sprite>sprites\spr_range_attacking</sprite>
+      <sprite>sprites\spr_smoke_boss</sprite>
+    </sprites>
     <sprite>sprites\spr_fire</sprite>
     <sprite>sprites\spr_title</sprite>
   </sprites>

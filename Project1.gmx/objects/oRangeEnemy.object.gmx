@@ -82,6 +82,7 @@ audio_play_sound(sn_range_attack, 10, false);
 {
     case e_range_state.idle:
     {
+        image_index = spr_range_idle;
         if (distance_to_object(oPlayer) &lt; 375)
         {
             state = e_range_state.attack;
@@ -90,6 +91,7 @@ audio_play_sound(sn_range_attack, 10, false);
     break;
     case e_range_state.attack:
     {
+        image_index = spr_range_attacking;
         if(instance_exists(oPlayer))
         {
             if (distance_to_object(oPlayer)&lt; 375)
