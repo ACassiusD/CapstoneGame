@@ -14,7 +14,7 @@
 audio_play_sound(sn_music1, 10, true);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
-  <clearDisplayBuffer>-1</clearDisplayBuffer>
+  <clearDisplayBuffer>0</clearDisplayBuffer>
   <makerSettings>
     <isSet>0</isSet>
     <w>0</w>
@@ -163,18 +163,21 @@ audio_play_sound(sn_music1, 10, true);</code>
     <instance objName="oBlock" x="7232" y="32" name="inst_BA84426A" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="6432" y="192" name="inst_E6F17FD0" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7040" y="256" name="inst_0B16F53A" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7232" y="448" name="inst_0C657169" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7168" y="448" name="inst_0C657169" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7360" y="192" name="inst_0A0D7341" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7072" y="704" name="inst_42469E01" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7296" y="704" name="inst_C0F87C47" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7520" y="608" name="inst_85BF6A00" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7264" y="704" name="inst_C0F87C47" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7360" y="544" name="inst_85BF6A00" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7552" y="160" name="inst_599D1D08" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7840" y="480" name="inst_BC9CDC43" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7776" y="448" name="inst_BC9CDC43" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7616" y="416" name="inst_3F24B296" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="8032" y="704" name="inst_380F0392" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7584" y="640" name="inst_380F0392" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7744" y="128" name="inst_0AAAA7F9" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7936" y="192" name="inst_B882FF27" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7488" y="768" name="inst_B882FF27" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7456" y="352" name="inst_97060CCC" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7712" y="704" name="inst_98653C00" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="8032" y="192" name="inst_59AB8670" locked="0" code="" scaleX="10" scaleY="52" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="8160" y="0" name="inst_0F4C334B" locked="0" code="" scaleX="2" scaleY="14" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
