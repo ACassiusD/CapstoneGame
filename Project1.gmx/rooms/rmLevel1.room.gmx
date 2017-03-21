@@ -279,6 +279,7 @@ audio_play_sound(sn_music1, 10, true);</code>
     <instance objName="oFlyingEnemy" x="7662" y="747" name="inst_9A39D062" locked="0" code="" scaleX="1.91666662693024" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7260" y="634" name="inst_28F5F072" locked="0" code="" scaleX="1.91666662693024" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7700" y="355" name="inst_C5EBB847" locked="0" code="" scaleX="1.91666662693024" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oDeathCounter" x="80" y="660" name="inst_9CA3D1D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

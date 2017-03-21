@@ -190,6 +190,7 @@
       <object>objects\otestobject</object>
       <object>objects\oJumpBugger</object>
       <object>objects\oDebuggerControls</object>
+      <object>objects\oDeathCounter</object>
     </objects>
     <object>objects\oRangeAttack</object>
     <object>objects\oBossRangeAttack</object>

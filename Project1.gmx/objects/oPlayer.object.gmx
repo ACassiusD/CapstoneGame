@@ -101,7 +101,12 @@ kunai = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(0, 0, oFxRoomRestart);
+            <string>if (instance_exists(oDeathCounter))
+{
+    global.deaths++
+}
+show_debug_message("Death");
+instance_create(0, 0, oFxRoomRestart);
 </string>
           </argument>
         </arguments>
@@ -460,7 +465,6 @@ if (state != DASH) {
         // If x velocity is moving in opposite direction 
         // approach 0 xvelocity and approach max x velocity for moving left
         if (vx &gt; 0)
-        show_debug_message("hello")
             vx = Approach(vx, 0, tempFric);   
             vx = Approach(vx, -vxMax, tempAccel);
     }
