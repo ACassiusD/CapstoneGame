@@ -819,7 +819,7 @@ if (sprite_index == sPlayerRoll) {
         bboxright = max(other.x + (24 * other.facing), other.x + (108 * other.facing));
         
         bboxtop    = other.y - 12;
-        bboxbottom = other.y + 12; 
+        bboxbottom = other.y + 24; 
     }
 }
     
