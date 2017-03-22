@@ -33,8 +33,8 @@ audio_play_sound(sn_boss_music, 10, true);</code>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="bg0" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="bgClouds" x="0" y="0" htiled="-1" vtiled="-1" hspeed="2" vspeed="0" stretch="0"/>
-    <background visible="-1" foreground="0" name="bgClouds2" x="0" y="0" htiled="-1" vtiled="-1" hspeed="4" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="2" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="4" vspeed="0" stretch="0"/>
     <background visible="-1" foreground="0" name="" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -58,30 +58,6 @@ audio_play_sound(sn_boss_music, 10, true);</code>
     <instance objName="oBlock" x="0" y="0" name="inst_C2FCCF13" locked="0" code="" scaleX="64" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="0" y="0" name="inst_D720092A" locked="0" code="" scaleX="2" scaleY="48" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="32" y="736" name="inst_C7B9C3B3" locked="0" code="" scaleX="62" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="320" y="704" name="inst_9ADFB68A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="352" y="704" name="inst_13406A75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="352" y="704" name="inst_9036F715" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="384" y="704" name="inst_8669C7CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="416" y="704" name="inst_66A83888" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="480" y="704" name="inst_9F5E07CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="512" y="704" name="inst_6847281B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="288" y="704" name="inst_3C7027C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="256" y="704" name="inst_93532D6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="192" y="704" name="inst_E10737D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="160" y="704" name="inst_EEBDCFDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="224" y="704" name="inst_004E356E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="448" y="704" name="inst_83B5550A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="544" y="704" name="inst_1405AA1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="576" y="704" name="inst_7A517EC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="608" y="704" name="inst_D5B50986" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="640" y="704" name="inst_6A3AEACB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="672" y="704" name="inst_B1E56478" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="704" y="704" name="inst_319312A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="736" y="704" name="inst_032AA375" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="768" y="704" name="inst_74722F4F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="800" y="704" name="inst_5BA28429" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="832" y="704" name="inst_A432AB7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCrateSmall" x="864" y="704" name="inst_10C5645E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="96" y="512" name="inst_5F65204C" locked="0" code="" scaleX="7.40000009536743" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="320" y="448" name="inst_6F099920" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="416" y="640" name="inst_6692AEC2" locked="0" code="" scaleX="10" scaleY="2" colour="4294967295" rotation="0"/>
@@ -91,8 +67,6 @@ audio_play_sound(sn_boss_music, 10, true);</code>
     <instance objName="oBlock" x="96" y="256" name="inst_CA43C67C" locked="0" code="" scaleX="10" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="576" y="448" name="inst_4ADD49FA" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="992" y="0" name="inst_23C1CEA3" locked="0" code="" scaleX="2" scaleY="48" colour="4294967295" rotation="0"/>
-    <instance objName="oDebuggerControls" x="32" y="32" name="inst_D0C9E734" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oBoss" x="384" y="416" name="inst_0CEBD3D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles0" x="0" y="480" w="8" h="8" xo="0" yo="0" id="10000336" name="inst_645354B7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

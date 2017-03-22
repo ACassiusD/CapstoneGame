@@ -102,7 +102,7 @@ with (oRangeEnemy) {
 with (oBoss) {
     // Killing Enemy
     if (!(bbox_left &gt; other.bboxright || bbox_right &lt; other.bboxleft || bbox_top &gt; other.bboxbottom || bbox_bottom &lt; other.bboxtop)) {
-        hp = hp - 0.5;
+        hp = hp - 1.5;
         audio_play_sound(sn_hit, 10, false);
 
     }
