@@ -398,17 +398,22 @@ kAbility2      = keyboard_check(ord('S')) || gamepad_button_check_pressed(0, gp_
 
 dbgClick = gamepad_button_check_pressed(0, gp_padd) || keyboard_check(vk_left);
 dbg2Click = gamepad_button_check_pressed(0, gp_padu)|| keyboard_check(vk_right);
+dbg3Click = gamepad_button_check_pressed(0, gp_padr)
 
 
 //////////////////////////////// Movement ///////////////////////////////////////////
 
 
 if (dbgClick) {
-    room_goto(room2)
+    room_goto(rmLevel1)
 }
 
 if (dbg2Click) {
     room_goto(room1)
+}
+
+if (dbg3Click) {
+    room_goto(rmTitleScreen)
 }
 
 // Apply the correct form of acceleration and friction
