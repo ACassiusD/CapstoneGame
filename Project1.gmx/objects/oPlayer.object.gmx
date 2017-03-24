@@ -507,7 +507,7 @@ if (kJump &amp;&amp; cLeft &amp;&amp; !onGround) {
     xscale = 0.67;
             
     if (kLeft) {
-        vy = -jumpHeight * 10.0;
+        vy = -jumpHeight * 5.0;
         vx =  jumpHeight * 1;
         audio_play_sound(sn_jump, 10, false);
     } else {
@@ -522,7 +522,7 @@ if (kJump &amp;&amp; cRight &amp;&amp; !onGround) {
     xscale = 0.67;
     
     if (kRight) {
-        vy = -jumpHeight * 10.0;
+        vy = -jumpHeight * 5.0;
         vx = -jumpHeight * 1;
         audio_play_sound(sn_jump, 10, false);
     } else {
@@ -633,7 +633,7 @@ if (!kBlock &amp;&amp; kAction) {
 if(kUp &amp;&amp; (cLeft || cRight))
 {
     if(!kJump)
-        vy = -3;
+        vy = 0;
 }
 
 blocking = kBlock;
