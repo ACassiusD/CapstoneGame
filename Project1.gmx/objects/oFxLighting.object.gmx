@@ -38,13 +38,13 @@ draw_clear_alpha(c_black, 0); //Using a drawing function
 // Reset to application surface
 surface_reset_target();
 
-
+lightStrength = 1;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="7" enumb="3">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -61,7 +61,7 @@ surface_reset_target();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Memory management (wow fancy)
+            <string>// Clean up the surface memory manually
 if (surface_exists(surf)) 
     surface_free(surf);
 </string>
@@ -121,7 +121,6 @@ if (!surface_exists(surf)) {
             <kind>1</kind>
             <string>//Check that surfacer has not benn destroyed 
 if (surface_exists(surf)) {
-
     surface_set_target(surf);
 
     //Create dark overlay
@@ -133,8 +132,11 @@ if (surface_exists(surf)) {
     draw_set_color(c_white);
     
     with (oFlyingEnemy)
-    draw_circle(x + random_range(-1, 1), y + random_range(-1, 1), 30 + random_range(-1, 1), false);
-
+    {
+        scaleRange = random_range(-.3, .3);
+        //draw_circle(x + random_range(-1, 1), y + random_range(-1, 1), 30 + random_range(-1, 1), false);
+        draw_sprite_ext(sLight, 0, x + random_range(-2, 2), y + random_range(-2, 2), 4 + scaleRange, 4 + scaleRange, 0, c_white, oFxLighting.lightStrength);
+    }
     //Reseting draw stuff
     draw_set_blend_mode(bm_normal);
     draw_set_alpha(1);

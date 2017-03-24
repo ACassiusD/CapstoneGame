@@ -85,6 +85,7 @@
         <sprite>sprites\sParticleFgGrass</sprite>
         <sprite>sprites\sParticleBgGrass</sprite>
       </sprites>
+      <sprite>sprites\sLight</sprite>
     </sprites>
     <sprite>sprites\sWaterMask</sprite>
     <sprite>sprites\sLeftArrow</sprite>
