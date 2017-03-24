@@ -146,46 +146,27 @@ audio_play_sound(sn_music1, 10, true);</code>
     <instance objName="oBlock" x="4384" y="736" name="inst_07EF001F" locked="0" code="" scaleX="12" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="4192" y="992" name="inst_C2DB5B7A" locked="0" code="" scaleX="20" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="5504" y="992" name="inst_6A1A3359" locked="0" code="" scaleX="26" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4609" y="970" name="inst_5058A8E3" locked="0" code="" scaleX="4.125" scaleY="1.6875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4800" y="965" name="inst_DE571A32" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4994" y="961" name="inst_7B62516F" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="5190" y="958" name="inst_4351B99D" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="5374" y="957" name="inst_A1DF2CA4" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="5280" y="791" name="inst_F4ADA0E9" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="5086" y="791" name="inst_2845257F" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4896" y="785" name="inst_556C138E" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4704" y="784" name="inst_6F656C7F" locked="0" code="" scaleX="4" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="4609" y="970" name="inst_5058A8E3" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="6720" y="512" name="inst_38794C53" locked="0" code="" scaleX="16" scaleY="32" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7437" y="9" name="inst_BA84426A" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7330" y="14" name="inst_BA84426A" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="6432" y="192" name="inst_E6F17FD0" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7124" y="925" name="inst_0B16F53A" locked="0" code="" scaleX="9.9375" scaleY="1.875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7595" y="667" name="inst_0A0D7341" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7075" y="395" name="inst_42469E01" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7319" y="399" name="inst_C0F87C47" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7591" y="408" name="inst_599D1D08" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7835" y="421" name="inst_380F0392" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7907" y="341" name="inst_0AAAA7F9" locked="0" code="" scaleX="8.25" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7322" y="663" name="inst_B882FF27" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7842" y="670" name="inst_98653C00" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7588" y="437" name="inst_0A0D7341" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7074" y="222" name="inst_42469E01" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7331" y="219" name="inst_C0F87C47" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7588" y="214" name="inst_599D1D08" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7837" y="220" name="inst_380F0392" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7333" y="441" name="inst_B882FF27" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7837" y="437" name="inst_98653C00" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="8032" y="192" name="inst_59AB8670" locked="0" code="" scaleX="10" scaleY="52" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="8160" y="0" name="inst_0F4C334B" locked="0" code="" scaleX="2" scaleY="14" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="1664" y="832" name="inst_5D18FE7C" locked="0" code="" scaleX="1.75" scaleY="1.96875" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="1600" y="928" name="inst_EA2AA7E5" locked="0" code="" scaleX="1.5625" scaleY="1.87096774578094" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="2141" y="156" name="inst_65ADD0F4" locked="0" code="" scaleX="6.625" scaleY="4.40000009536743" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="2771" y="137" name="inst_5C72B268" locked="0" code="" scaleX="1.80999994277954" scaleY="1.4099999666214" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4173" y="412" name="inst_80B7AFC8" locked="0" code="" scaleX="2.875" scaleY="0.6875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4170" y="482" name="inst_3EA4EFC5" locked="0" code="" scaleX="2.875" scaleY="0.6875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4170" y="553" name="inst_0F8E52C8" locked="0" code="" scaleX="2.875" scaleY="0.6875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4170" y="629" name="inst_17149CCC" locked="0" code="" scaleX="2.875" scaleY="0.6875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4169" y="703" name="inst_98E9257F" locked="0" code="" scaleX="2.875" scaleY="0.6875" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="6777" y="120" name="inst_876B540C" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="6606" y="154" name="inst_0149BFBF" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7075" y="659" name="inst_7D4246D6" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7073" y="442" name="inst_7D4246D6" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oDeathCounter" x="31" y="616" name="inst_9CA3D1D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ShootDir" x="130" y="853" name="inst_AD19E10C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="1792" y="800" name="inst_12575419" locked="0" code="" scaleX="1.75" scaleY="1.96875" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="1920" y="832" name="inst_66D16C51" locked="0" code="" scaleX="1.75" scaleY="1.96875" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="1760" y="928" name="inst_EBA047AD" locked="0" code="" scaleX="1.75" scaleY="1.96875" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="2304" y="320" name="inst_9398C4C1" locked="0" code="" scaleX="1.75" scaleY="1.96875" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="2920" y="134" name="inst_2648C5E7" locked="0" code="" scaleX="1.80999994277954" scaleY="1.4099999666214" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="3360" y="480" name="inst_30956E61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -209,12 +190,12 @@ audio_play_sound(sn_music1, 10, true);</code>
     <instance objName="obj_enemy" x="1713" y="182" name="inst_14FB2C79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="1991" y="306" name="inst_1EB9238B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="2550" y="192" name="inst_564AFCBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="5218" y="194" name="inst_974C7D67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="4769" y="227" name="inst_4158381F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="4951" y="228" name="inst_8F37A9D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="5379" y="185" name="inst_5C1DC488" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="5729" y="188" name="inst_574F6CED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="6010" y="199" name="inst_19F530FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="4980" y="232" name="inst_974C7D67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="4772" y="237" name="inst_4158381F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="4878" y="234" name="inst_8F37A9D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5587" y="158" name="inst_5C1DC488" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="6003" y="131" name="inst_574F6CED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5904" y="132" name="inst_19F530FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy" x="4302" y="934" name="inst_1B6426DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="4736" y="898" name="inst_DAB10B15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="4923" y="900" name="inst_CE00469A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -224,7 +205,7 @@ audio_play_sound(sn_music1, 10, true);</code>
     <instance objName="oFlyingEnemy" x="6533" y="277" name="inst_961B8F3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="6709" y="252" name="inst_62AC17C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7013" y="310" name="inst_8541F498" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oFlyingEnemy" x="7852" y="268" name="inst_507145A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="7951" y="618" name="inst_507145A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7618" y="889" name="inst_48FFD930" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7221" y="627" name="inst_37CC431A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7474" y="614" name="inst_89D3B3CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -239,26 +220,47 @@ audio_play_sound(sn_music1, 10, true);</code>
     <instance objName="oRangeEnemy" x="3826" y="174" name="inst_1D5E4556" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRangeEnemy" x="4351" y="114" name="inst_C083D5C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRangeEnemy" x="4399" y="67" name="inst_2CCA16B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRangeEnemy" x="4206" y="396" name="inst_9B95A9B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRangeEnemy" x="4205" y="466" name="inst_EDDF2366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRangeEnemy" x="4205" y="538" name="inst_0B927131" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRangeEnemy" x="4206" y="613" name="inst_55494E6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRangeEnemy" x="4206" y="687" name="inst_2B0C2C38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRangeEnemy" x="5420" y="453" name="inst_9B95A9B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRangeEnemy" x="5107" y="463" name="inst_EDDF2366" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRangeEnemy" x="4778" y="479" name="inst_0B927131" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRangeEnemy" x="4468" y="490" name="inst_55494E6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="6164" y="668" name="inst_0F83BD16" locked="0" code="" scaleX="11.3333330154419" scaleY="2.125" colour="4294967295" rotation="0"/>
     <instance objName="oFlyingEnemy" x="7331" y="886" name="inst_D7B0C567" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_portal" x="8119" y="130" name="inst_A0CB8687" locked="0" code="" scaleX="2.4193549156189" scaleY="3.4375" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="3496" y="638" name="inst_BCFD0BF1" locked="0" code="" scaleX="5.0625" scaleY="1.93333327770233" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="3624" y="639" name="inst_3D7C6B06" locked="0" code="" scaleX="5.0625" scaleY="1.93333327770233" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="3752" y="639" name="inst_BA4FD923" locked="0" code="" scaleX="5.0625" scaleY="1.93333327770233" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7580" y="14" name="inst_AD3837E1" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7733" y="17" name="inst_CE60E8F1" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7894" y="15" name="inst_A793C9D3" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="7275" y="8" name="inst_9DA36DF5" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7332" y="666" name="inst_AD3837E1" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7585" y="16" name="inst_CE60E8F1" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7833" y="17" name="inst_A793C9D3" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7073" y="18" name="inst_9DA36DF5" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7405" y="920" name="inst_2A839AF8" locked="0" code="" scaleX="9.9375" scaleY="1.875" colour="4294967295" rotation="0"/>
     <instance objName="oBlock" x="7677" y="916" name="inst_AB947687" locked="0" code="" scaleX="9.9375" scaleY="1.875" colour="4294967295" rotation="0"/>
-    <instance objName="oBlock" x="4628" y="228" name="inst_62A29820" locked="0" code="" scaleX="4" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="5494" y="195" name="inst_2B141AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy" x="5609" y="193" name="inst_48CAB8FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="4486" y="242" name="inst_62A29820" locked="0" code="" scaleX="11.8000001907349" scaleY="3.13333344459534" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5657" y="161" name="inst_2B141AC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5818" y="128" name="inst_48CAB8FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5268" y="253" name="inst_028C8F7B" locked="0" code="" scaleX="21.7333335876465" scaleY="2.73333334922791" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5520" y="210" name="inst_36B5C2D2" locked="0" code="" scaleX="21.7333335876465" scaleY="2.73333334922791" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5726" y="170" name="inst_522E3F5A" locked="0" code="" scaleX="21.7333335876465" scaleY="2.73333334922791" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="6052" y="205" name="inst_1BF1F110" locked="0" code="" scaleX="1.4375" scaleY="6.06666660308838" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5312" y="215" name="inst_90CB8D9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5387" y="217" name="inst_C1901298" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy" x="5461" y="211" name="inst_9DD17F62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="7592" y="653" name="inst_8578B9EE" locked="0" code="" scaleX="2" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="7949" y="235" name="inst_A2E73E8C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="4695" y="790" name="inst_2F1708E4" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="4789" y="968" name="inst_BF17DAAC" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="4880" y="788" name="inst_C614715A" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="4982" y="966" name="inst_37B3E2B8" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5078" y="787" name="inst_A15E0A27" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5173" y="962" name="inst_5C7839A4" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5257" y="788" name="inst_ABD80218" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oBlock" x="5356" y="961" name="inst_601FD505" locked="0" code="" scaleX="6.5625" scaleY="1.53333330154419" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="1800" y="795" name="inst_079BA7A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="1735" y="891" name="inst_843AC531" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="1852" y="887" name="inst_B5344242" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="1910" y="792" name="inst_21EF54B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFlyingEnemy" x="1982" y="878" name="inst_51582A8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
