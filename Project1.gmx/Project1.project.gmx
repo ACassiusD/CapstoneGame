@@ -179,13 +179,13 @@
       <objects name="Abilities">
         <object>objects\oAbilityKunai</object>
         <object>objects\obj_smoke</object>
-        <object>objects\obj_ShootDir</object>
       </objects>
     </objects>
     <objects name="Effect">
       <object>objects\oFxFadeIn</object>
       <object>objects\oFxRoomGoTo</object>
       <object>objects\oFxRoomRestart</object>
+      <object>objects\oFxLighting</object>
       <objects name="Decorative">
         <objects name="Grass">
           <object>objects\oParGrass</object>
@@ -196,12 +196,12 @@
           <object>objects\oParticleFgGrass</object>
           <object>objects\oParticleBgGrass</object>
         </objects>
+        <object>objects\oParCrate</object>
+        <object>objects\oCrateSmall</object>
+        <object>objects\oCoin</object>
+        <object>objects\oCratePoof</object>
       </objects>
     </objects>
-    <object>objects\oParCrate</object>
-    <object>objects\oCrateSmall</object>
-    <object>objects\oCoin</object>
-    <object>objects\oCratePoof</object>
     <objects name="debug">
       <object>objects\oDebugger</object>
       <object>objects\otestobject</object>
@@ -214,6 +214,7 @@
       <object>objects\obj_title</object>
       <object>objects\obj_fire</object>
       <object>objects\objTitle</object>
+      <object>objects\obj_ShootDir</object>
     </objects>
     <object>objects\obj_portal</object>
   </objects>
