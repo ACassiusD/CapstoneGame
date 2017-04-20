@@ -45,7 +45,7 @@ jumpHeight  = 12.00;
 gravNorm    = 0.80;
 gravSlide   = 0.25; 
 
-clingTime   = 12.0;
+clingTime   = 6.0;
 
 throwTime   = 100;
 
@@ -79,6 +79,8 @@ blocking  = false;
 //fallMax  = 28;
 
 kunai = 0;
+
+holdTime = 60;
 </string>
           </argument>
         </arguments>
@@ -107,6 +109,30 @@ kunai = 0;
 }
 show_debug_message("Death");
 instance_create(0, 0, oFxRoomRestart);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if holding = true  
+    holding = false
 </string>
           </argument>
         </arguments>
@@ -317,6 +343,9 @@ repeat(abs(vx)) {
     else
         vx = 0;
 }
+
+/// Stick to wall 
+
 </string>
           </argument>
         </arguments>
@@ -447,7 +476,7 @@ if ((!cRight &amp;&amp; !cLeft) || onGround) {
 if (((kRight &amp;&amp; cLeft) || (kLeft &amp;&amp; cRight)) &amp;&amp; canStick &amp;&amp; !onGround) {
     alarm[0] = clingTime;
     sticking = true; 
-    canStick = false;       
+    canStick = false;   
 }
 
 // Handle gravity

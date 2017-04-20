@@ -209,6 +209,7 @@
       <object>objects\oJumpBugger</object>
       <object>objects\oDebuggerControls</object>
       <object>objects\oDeathCounter</object>
+      <object>objects\oHoldingDebugger</object>
     </objects>
     <objects name="UI Stuff">
       <object>objects\obj_menu</object>
